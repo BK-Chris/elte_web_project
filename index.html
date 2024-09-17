@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Theory</title>
+
+    <title id="ct_title"></title>
+    <link id="ct_icon" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/common/config.js" defer></script>
 </head>
 <body>
-    
+    <nav id="ct_navigation">
+        <img id="ct_logo" alt="Color Theory's website logo.">
+        <ul id="ct_pages">
+        </ul>
+        <ul id="ct_social_link">
+        </ul>
+    </nav>
+
+    <section id="ct_introduction_container">
+        <h1>What is Color Theory?</h1>
+        <p>Color theory is the study of how colors work together and how they affect our emotions and perceptions. It's like a toolbox for artists, designers, and creators to help them choose the right colors for their projects. Color theory enables you to pick colors that go well together and convey the right mood or message in your work.</p>
+        <a href="./pages/history.html">Read more about color theory...</a>
+        <aside>
+            <video width="320" height="240" controls>
+                <source src="./media/vids/there_is_no_color.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </aside>
+    </section>
+
+    <section id="ct_thumbnail_container">
+        <div class="ct_thumbnail">
+            <img src="./media/imgs/index/color_schemes_thumbnail.jpg" alt="Color swatch book with a variety of colors arranged in a circular pattern.">
+            <p>Choosing the right color scheme is key to creating visually appealing and user-friendly interfaces. Read more about it here.</p>
+        </div>
+        <div class="ct_thumbnail">
+            <img src="./media/imgs/index/color_palettes_thumbnail.jpg" alt="Abstract image of blurred, overlapping circles in various colors, primarily orange and red.">
+            <p>Find stunning color palettes curated for different design styles. Click here to get inspired!</p>
+        </div>
+        <div class="ct_thumbnail">
+            <img src="./media/imgs/index/contact_thumbnail.jpg" alt="A silhouette of a girl typing an laptop while holding a cup of tea. Sitting in a serious blue colored environment."> 
+            <p>Get in Touch! Have a question or need assistance? Contact our friendly team.</p>
+        </div>
+    </section>
 </body>
 </html>
