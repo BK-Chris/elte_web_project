@@ -1,21 +1,23 @@
-/* HTML Structure for the config file
+/* Expected HTML Structure
 *   <head>
 *       ...
-*       <title id="ct_title"></title>
-*       <link id="ct_icon" rel="icon" type="image/x-icon">
+*       <title id="title"></title>
+*       <link id="icon" rel="icon" type="image/x-icon">
 *       <link rel="stylesheet" href="./styles/main.css">
 *       <script src="./scripts/common/config.js" defer></script>
 *       ...
 *   </head>
 *   <body>
 *   ...
-*       <nav id="ct_navigation">
-*           <img id="ct_logo" alt="Color Theory's website logo.">
-*           <ul id="ct_pages">
-*           </ul>
-*           <ul id="ct_social_link">
-*           </ul>
-*       </nav>
+*       <nav id="navigation">
+            <div id="navigation_left">
+                <img id="logo" alt="Color Theory's website logo.">
+                <ul id="pages"></ul>
+            </div>
+            <div id="navigation_right">    
+                <ul id="social_links"></ul>
+            </div>
+        </nav>
 *   ...
 *   </body>
 */
@@ -56,13 +58,34 @@ function configureCommonElements() {
 
     // TO BE IMPLEMENTED
     const socialLinks = [
-
+        {
+            alt: "Facebook",
+            src: "media/icons/social_media/icons8-facebook-48.png",
+            href: "https://www.facebook.com/"
+        },
+        {
+            alt: "Instagram",
+            src: "media/icons/social_media/icons8-instagram-48.png",
+            href: "https://www.instagram.com/"
+        },
+        {
+            alt: "LinkedIn",
+            src: "media/icons/social_media/icons8-linkedin-48.png",
+            href: "https://www.linkedin.com/"
+        },
+        {
+            alt: "YouTube",
+            src: "media/icons/social_media/icons8-youtube-48.png",
+            href: "https://www.youtube.com/"
+        }
     ]
 
-    const navElement = document.getElementById("ct_pages");
-    const titleElement = document.getElementById("ct_title");
-    const iconElement = document.getElementById("ct_icon");
-    const logoElement = document.getElementById("ct_logo");
+    const pagesContainer = document.getElementById("pages");
+    const socialContainer = document.getElementById("social_links");
+
+    const titleElement = document.getElementById("title");
+    const iconElement = document.getElementById("icon");
+    const logoElement = document.getElementById("logo");
 
     // Current page
     let currentPathName = window.location.pathname;
@@ -89,13 +112,29 @@ function configureCommonElements() {
             anchor.classList.add("active");
             anchor.href = '#';
         } else {
+            anchor.classList.add("hover");
             if (page.name !== "Home") {
                 anchor.href = (isHomePage) ? "./pages/" + page.path : page.path
             } else {
                 anchor.href = "../" + page.path;
             }
         }
-        navElement.appendChild(anchor);
+        pagesContainer.appendChild(anchor);
+    });
+
+    // Adding Social links
+    socialLinks.forEach(link => {
+        const anchor = document.createElement("a");
+        const img = document.createElement("img");
+
+        anchor.href = link.href;
+        img.alt = link.alt;
+        (isHomePage) ?
+            img.src = link.src :
+            img.src = "../" + link.src;
+
+        anchor.appendChild(img);
+        socialContainer.appendChild(anchor);
     });
 }
 
