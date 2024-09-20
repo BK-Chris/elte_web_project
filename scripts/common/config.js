@@ -1,26 +1,3 @@
-/* Expected HTML Structure
-*   <head>
-*       ...
-*       <title id="title"></title>
-*       <link id="icon" rel="icon" type="image/x-icon">
-*       <link rel="stylesheet" href="./styles/main.css">
-*       <script src="./scripts/common/config.js" defer></script>
-*       ...
-*   </head>
-*   <body>
-*   ...
-*       <nav id="navigation">
-            <div id="navigation_left">
-                <img id="logo" alt="Color Theory's website logo.">
-                <ul id="pages"></ul>
-            </div>
-            <div id="navigation_right">    
-                <ul id="social_links"></ul>
-            </div>
-        </nav>
-*   ...
-*   </body>
-*/
 "use strict"
 configureCommonElements();
 

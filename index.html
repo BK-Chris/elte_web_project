@@ -13,63 +13,74 @@
 </head>
 
 <body>
-    <nav id="navigation">
-        <div id="navigation_left">
-            <img id="logo" alt="Color Theory's website logo.">
-            <ul id="pages"></ul>
-        </div>
-        <div id="navigation_right">
-            <ul id="social_links"></ul>
-        </div>
-    </nav>
+    <header id="navigation">
+        <nav id="navigation_left">
+            <a href="#"><img id="logo" alt="Color Theory's website logo."></a>
+            <ul id="pages">
+            </ul>
+        </nav>
+        <aside id="navigation_right">
+            <ul id="social_links">
+            </ul>
+        </aside>
+    </header>
 
-    <section id="introduction_container">
-        <section class="introduction_left">
-            <h1>What is Color Theory?</h1>
-            <p><strong>Color theory</strong> is the study of how colors work together and how they affect our emotions
-                and perceptions.<br>It's
-                like a toolbox for artists, designers, and creators to help them choose the right colors for their
-                projects.
-                <br><br>
-                Color theory enables you to pick colors that go well together and convey the right mood or message in
-                your
-                work.
-            </p>
-            <a class="hover" href="./pages/history.html">More about color theory...</a>
+    <main>
+        <section id="index_introduction">
+            <section class="index_introduction_left">
+                <h1>What is Color Theory?</h1>
+                <article><strong>Color theory</strong> is the study of how colors work together and how they affect our
+                    emotions
+                    and perceptions.<br>It's
+                    like a toolbox for artists, designers, and creators to help them choose the right colors for their
+                    projects.
+                    <br><br>
+                    Color theory enables you to pick colors that go well together and convey the right mood or message
+                    in
+                    your
+                    work.
+                </article>
+                <a id="index_more_about" class="hover" href="./pages/history.html">More about color theory...</a>
+            </section>
+            <section class="index_introduction_right">
+                <video controls>
+                    <source src="./media/vids/there_is_no_color.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <a class="hover"
+                    href="https://www.interaction-design.org/tv/course_videos/v2/visual-design-2-2-what-is-color-720p.mp4">
+                    Click here to see full video...
+                </a>
+            </section>
         </section>
-        <section class="introduction_right">
-            <video controls>
-                <source src="./media/vids/there_is_no_color.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <a class="hover"
-                href="https://dqt1nhr0dcwgx.cloudfront.net/tv/course_videos/v2/visual-design-2-2-what-is-color-720p.mp4?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kcXQxbmhyMGRjd2d4LmNsb3VkZnJvbnQubmV0L3R2L2NvdXJzZV92aWRlb3MvdjIvdmlzdWFsLWRlc2lnbi0yLTItd2hhdC1pcy1jb2xvci03MjBwLm1wNCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTcyNjc1NDk1NX19fV19&Signature=hFltt5sA-Sew~wWL721z3YYQaHoTB3C2myU7kpiTHHTpMLWZ8JRPacxJAH7GFPV5N4Y3R8XbQc8mK04aP5Q5CmzOKgK3SA~H8417NPuju2Cq9n39MkO2~iG6Ai43J5Sfos1Fivm97wAZDJfVg8UD05fj95gbth667F~-jrcVL7r9ydFmEpmEQQKpugp261X84jl3ukv2PKifxqRsO3ijJjdh9bQzJCh1IcvjNbZrUCG9~8DqRHiJUaisbawZYdYs6Z3AMMKbqhV9qMjvGcqJXT-mQntg3q2BAh1sWydMycLfVru4hy3~~-X2UNotDPBDwJcf0fTeTvJJI303XSQsSA__&Key-Pair-Id=APKAJZGMDJHQOVEWTKAA">
-                Click here to see full video...
+
+        <section id="thumbnail_container">
+            <a class="thumbnail hover" href="./pages/color_scheme.html">
+                <img src="./media/imgs/index/color_schemes_thumbnail.jpg"
+                    alt="Color swatch book with a variety of colors arranged in a circular pattern.">
+                <p>Choosing the right color scheme is key to creating visually appealing and user-friendly interfaces.
+                </p>
+                <p><strong>Read more about it here.</strong>></p>
+            </a>
+            <a class="thumbnail hover" href="./pages/color_palettes.html">
+                <img src="./media/imgs/index/color_palettes_thumbnail.jpg"
+                    alt="Abstract image of blurred, overlapping circles in various colors, primarily orange and red.">
+                <p>Find stunning color palettes curated for different design styles.</p>
+                <p><strong>Click here to get inspired!</strong>
+                </p>
+            </a>
+            <a class="thumbnail hover" href="./pages/contact.html">
+                <img src="./media/imgs/index/contact_thumbnail.jpg"
+                    alt="A silhouette of a girl typing an laptop while holding a cup of tea. Sitting in a serious blue colored environment.">
+                <p>Have a question or need assistance? Contact our friendly team.</p>
+                <p><strong>Get in Touch!</strong></p>
             </a>
         </section>
-    </section>
+    </main>
 
-    <section id="thumbnail_container">
-        <a class="thumbnail hover">
-            <img src="./media/imgs/index/color_schemes_thumbnail.jpg"
-                alt="Color swatch book with a variety of colors arranged in a circular pattern.">
-            <p>Choosing the right color scheme is key to creating visually appealing and user-friendly interfaces.</p>
-            <p><strong>Read more about it here.</strong>></p>
-        </a>
-        <a class="thumbnail hover">
-            <img src="./media/imgs/index/color_palettes_thumbnail.jpg"
-                alt="Abstract image of blurred, overlapping circles in various colors, primarily orange and red.">
-            <p>Find stunning color palettes curated for different design styles.</p>
-            <p><strong>Click here to get inspired!</strong>
-            </p>
-        </a>
-        <a class="thumbnail hover">
-            <img src="./media/imgs/index/contact_thumbnail.jpg"
-                alt="A silhouette of a girl typing an laptop while holding a cup of tea. Sitting in a serious blue colored environment.">
-            <p>Have a question or need assistance? Contact our friendly team.</p>
-            <p><strong>Get in Touch!</strong></p>
-        </a>
-    </section>
+    <footer id="footer">
+
+    </footer>
 </body>
 
 </html>

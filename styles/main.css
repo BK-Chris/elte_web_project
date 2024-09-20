@@ -15,6 +15,7 @@
 }
 
 .hover:hover {
+    color: var(--dark-text) !important;
     background-color: var(--light-background) !important;
 }
 .hover:hover > * {
@@ -22,7 +23,7 @@
 }
 
 body {
-    padding: 0 0.5rem 10rem 0.5rem;
+    padding: 0 2rem 10rem 2rem;
     background: rgb(255, 255, 255);
     background: linear-gradient(90deg,
             rgba(179, 0, 255, 0.301) 0%,
@@ -30,21 +31,40 @@ body {
             rgb(255, 255, 255) 100%);
 }
 
+body > main{
+    padding: 2rem 0.5rem 2rem 0.5rem;
+}
+
 h1{
+    font-family: 'Lucida Handwriting';
     color: var(--dark-background);
+    font-size: 1.8rem;
+    padding: 2rem;
+}
+
+article{
+    text-indent: 1rem;
+    text-align:  justify;
+    line-height: 1.6rem;
+}
+
+strong{
+    color: var(--dark-text);
+    font-size: larger;
 }
 
 /* MENU *****/
 #navigation {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     border-bottom: 5px solid var(--dark-background);
+    height: 100px;
+    margin-top: 1rem;
 }
 
 #logo {
-    width: auto;
-    height: auto;
+    display: block;
     margin-right: 1rem;
 }
 
@@ -81,4 +101,62 @@ h1{
 #social_links>a {
     display: block;
 }
-/************/
+
+/* Mobiles */
+
+@media screen and (max-width: 767px){
+    body {
+        padding-left: 0;
+        padding-right: 0;
+        transition: padding 0.5s ease-out;
+    }
+    
+    #logo{
+        display: none;
+    }
+
+    /*
+    #navigation{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #pages,
+    #social_links {
+        width: 100%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        background-color: var(--dark-background);
+    }
+
+    #social_links *:not(:first-child),
+    #pages *:not(:first-child) {
+        display: none;
+    }
+*/
+}
+
+/* Tablets */
+@media screen and (min-width:768px) and (max-width: 1023px) {
+    body {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        transition: padding 0.5s ease-out;
+    }
+
+    #navigation{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #logo{
+        display: none;
+    }
+}
+
+@media print {
+    /* All your print styles go here */
+}
+  
