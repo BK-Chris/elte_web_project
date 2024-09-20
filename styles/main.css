@@ -14,14 +14,6 @@
     border-radius: 3px;
 }
 
-.hover:hover {
-    color: var(--dark-text) !important;
-    background-color: var(--light-background) !important;
-}
-.hover:hover > * {
-    color: var(--dark-text) !important;
-}
-
 body {
     padding: 0 2rem 10rem 2rem;
     background: rgb(255, 255, 255);
@@ -31,26 +23,66 @@ body {
             rgb(255, 255, 255) 100%);
 }
 
-body > main{
+main {
     padding: 2rem 0.5rem 2rem 0.5rem;
 }
 
-h1{
+main>* {
+    padding: 0 1rem 1rem 1rem;
+}
+
+h1 {
     font-family: 'Lucida Handwriting';
     color: var(--dark-background);
     font-size: 1.8rem;
     padding: 2rem;
 }
-
-article{
+/*
+h2 {
+    color: var(--dark-background);
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+*/
+article {
     text-indent: 1rem;
-    text-align:  justify;
+    text-align: justify;
     line-height: 1.6rem;
 }
 
-strong{
+strong {
     color: var(--dark-text);
     font-size: larger;
+}
+
+.hide{
+    display: none !important;
+}
+
+.display_flex{
+    display:flex;
+}
+
+
+.hover:hover {
+    color: var(--dark-text) !important;
+    background-color: var(--light-background) !important;
+}
+
+.hover:hover * {
+    color: var(--dark-text) !important;
+}
+
+.hover_dark:hover {
+    color: var(--light-text);
+    background-color: var(--dark-background);
+    cursor: pointer;
+}
+
+.introduction {
+    margin-bottom: 3rem;
+    border-bottom: 5px solid var(--dark-background);
+    padding: 0 1rem 1rem 1rem;
 }
 
 /* MENU *****/
@@ -94,8 +126,9 @@ strong{
     font-weight: 600;
 }
 
-#pages>a.active {
-    background-color: var(--color-active);
+.active {
+    color: var(--light-text) !important;
+    background-color: var(--color-active) !important;
 }
 
 #social_links>a {
@@ -104,14 +137,14 @@ strong{
 
 /* Mobiles */
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px) {
     body {
         padding-left: 0;
         padding-right: 0;
         transition: padding 0.5s ease-out;
     }
-    
-    #logo{
+
+    #logo {
         display: none;
     }
 
@@ -145,13 +178,13 @@ strong{
         transition: padding 0.5s ease-out;
     }
 
-    #navigation{
+    #navigation {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    #logo{
+    #logo {
         display: none;
     }
 }
@@ -159,4 +192,3 @@ strong{
 @media print {
     /* All your print styles go here */
 }
-  

@@ -1,0 +1,77 @@
+/* Note: 'hover_dark', 'active', 'hide', 'display_flex' are defined in main.css */
+
+#color_schemes{
+    border: 3px solid var(--dark-background);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#color_scheme_description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#color_scheme_navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    gap: 0.3rem;
+    padding-bottom: 2rem;
+}
+
+#color_scheme_navigation li {
+    list-style-type: none;
+    line-height: 1.5rem;
+    padding: 0.3rem;
+}
+
+#color_schemes_description_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+#color_scheme_description {
+    flex: 1 1 0;
+}
+
+#canvas {
+    flex: 1 1 0;
+    border: 3px solid var(--dark-background);
+}
+
+.color_scheme_item {
+    display: flex;
+    flex-direction: column;
+}
+
+.color_scheme_item img {
+    width: 100%;
+    border: 1px solid var(--dark-background);
+}
+
+.color_scheme_item>article {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+#color_scheme_warm_and_cool {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+#color_scheme_warm_and_cool>div,
+#color_scheme_warm_and_cool>article {
+    flex: 1 1 0;
+}
+
+#color_scheme_warm_and_cool img {
+    width: 100%;
+}

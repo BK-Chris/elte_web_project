@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -8,6 +9,7 @@
     <title id="title"></title>
     <link id="icon" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/color_scheme.css">
     <script src="../scripts/common/config.js" defer></script>
 </head>
 
@@ -23,7 +25,119 @@
     </header>
 
     <main>
+        <section class="introduction">
+            <h1>Color Scheme</h1>
+            <article>In screen design, designers use the additive color model, where red, green and blue are the primary
+                colors. Just as you need to place images and other elements in visual design strategically, your color
+                choices should optimize your users' experience in attractive interfaces with high usability. When
+                starting your design process, you can consider using any of these main color schemes...
+            </article>
+        </section>
 
+        <section id="color_schemes">
+            <nav>
+                <ul id="color_scheme_navigation">
+                    <li class="hover_dark active">Monochromatic</li>/
+                    <li class="hover_dark">Analogous</li>/
+                    <li class="hover_dark">Complementary</li>/
+                    <li class="hover_dark">Split-Complementary</li>/
+                    <li class="hover_dark">Triadic</li>/
+                    <li class="hover_dark">Tetradic</li>/
+                    <li class="hover_dark">Square</li>
+                </ul>
+            </nav>
+
+            <section id="color_schemes_description_wrapper">
+                <section id="color_scheme_description">
+                    <section id="monochromatic" class="color_scheme_item display_flex">
+                        <div>
+                            <img src="../media/imgs/color_scheme/monochromatic.webp"
+                                alt="Color wheel with shades of yellow, orange, red, purple, blue, and green">
+                        </div>
+                        <article>
+                            Take one hue and create other elements from different shades and tints of it.
+                        </article>
+                    </section>
+
+                    <section id="analogous" class="color_scheme_item hide">
+                        <img src="../media/imgs/color_scheme/analogous.webp"
+                            alt="Color wheel with three adjacent highlighted colors: orange, yellow-orange, and yellow">
+                        <article>
+                            Use three colors located beside one another on the color wheel (e.g., orange, yellow-orange
+                            and
+                            yellow to show
+                            sunlight). A variant is to mix white with these to form a “high-key” analogous color scheme
+                            (e.g.,
+                            flames).
+                        </article>
+                    </section>
+                    <section id="complementary" class="color_scheme_item hide">
+                        <img src="../media/imgs/color_scheme/complementary.webp"
+                            alt="Color wheel with two opposite highlighted colors: blue and yellow">
+                        <article>
+                            Use “opposite color” pairs—e.g., blue/yellow—to maximize contrast.
+                        </article>
+                    </section>
+                    <section id="split-complementary" class="color_scheme_item hide">
+                        <img src="../media/imgs/color_scheme/split_complementary.webp"
+                            alt="Color wheel with a highlighted blue color and two colors on either side: orange and green">
+                        <article>
+                            Add colors from either side of your complementary color pair to soften the contrast.
+                        </article>
+                    </section>
+                    <section id="triadic" class="color_scheme_item hide">
+                        <img src="../media/imgs/color_scheme/triadic.webp"
+                            alt="Color wheel with three highlighted colors at equal intervals: red, blue, and yellow">
+                        <article>
+                            Take three equally distant colors on the color wheel (i.e., 120° apart: e.g.,
+                            red/blue/yellow).
+                            These colors may
+                            not be vibrant, but the scheme can be as it maintains harmony and high contrast. It's easier
+                            to
+                            make
+                            visually
+                            appealing designs with this scheme than with a complementary scheme.
+                        </article>
+                    </section>
+                    <section id="tetradic" class="color_scheme_item hide">
+                        <img src="../media/imgs/color_scheme/tetradic.webp"
+                            alt="Color wheel with four highlighted colors in two complementary pairs: orange, yellow, blue, and violet">
+                        <article>
+                            Take four colors that are two sets of complementary pairs (e.g., orange/yellow/blue/violet)
+                            and
+                            choose one
+                            dominant color. This allows rich, interesting designs. However, watch the
+                            balance between warm and cool colors.
+                        </article>
+                    </section>
+                    <section id="square" class="color_scheme_item hide">
+                        <img src="../media/imgs/color_scheme/square.webp"
+                            alt="Color wheel with four highlighted colors at even intervals: red, yellow, green, and blue">
+                        <article>
+                            A variant of tetradic; you find four colors evenly spaced on the color wheel (i.e., 90°
+                            apart).
+                            Unlike tetradic,
+                            square schemes can work well if you use all four colors evenly.
+                        </article>
+                    </section>
+                </section>
+                <canvas id="canvas">
+
+                </canvas>
+            </section>
+        </section>
+
+        <section id="color_scheme_warm_and_cool">
+            <article>
+                Your colors must reflect your design's goal and the brand's personality. You should also apply color
+                theory to optimize a positive psychological impact on users. So, you should carefully determine how the
+                color temperature (i.e., your use of warm, neutral and cool colors) reflects your message.
+            </article>
+            <div>
+                <img src="../media/imgs/color_scheme/warm_cool_colors.webp"
+                    alt="Color wheel, with a horizontal line in the middle. The upper-half representing warm shades of color from left to right: yellow, orange, red. The lower-half representing cool shaed of color from right to left: purple, blue, green.">
+            </div>
+        </section>
     </main>
 
     <footer>
