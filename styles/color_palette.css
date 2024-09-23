@@ -1,0 +1,51 @@
+#color_palettes_container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+
+.color_palettes_table{
+    flex: 0 0 30%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-bottom: 2rem;
+}
+
+.color_palettes_table *{
+    text-align: center;
+    border-radius: 0;
+}
+
+.color_palettes_table th{
+    border: 1px solid var(--dark-background);
+    background-color: var(--dark-background);
+    color: var(--light-text);
+}
+
+.color_palettes_table td{
+    width: 50%;
+    border: 1px solid var(--dark-background);
+    line-height: 2rem;
+    text-wrap: nowrap;
+    overflow:hidden;
+    cursor: pointer;
+}
+
+.color_palettes_table td:focus{
+    background-color: white;
+}
+
+
+@media screen and (max-width: 767px) {
+    .color_palettes_table{
+        flex: 0 0 100%;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width: 1023px) {
+    .color_palettes_table{
+        flex: 0 0 45%;
+    }
+}

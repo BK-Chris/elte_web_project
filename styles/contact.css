@@ -1,0 +1,127 @@
+:root {
+    --max-width-for-inputs: 500px;
+}
+
+#contact_container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+#contact_form {
+    flex: 1 1 70%;
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+#contact_right_fieldset,
+#contact_left_fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+/* LEFT SIDE OF FORM */
+#contact_left_fieldset {
+    flex: 1 1 60%;
+    gap: 1rem;
+}
+
+.label_input_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: var(--max-width-for-inputs);
+}
+
+.label_input_wrapper label {
+    white-space: nowrap;
+    width: 20%;
+    flex-shrink: 0;
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+.label_input_wrapper input {
+    padding: 10px;
+    width: 80%;
+    line-height: 2rem;
+    border: 1px solid var(--dark-background);
+}
+
+#contact_message {
+    padding: 10px 10px 10px 10px;
+    border: 1px solid var(--dark-background);
+    min-height: 7rem;
+    height: 7rem;
+    resize: vertical;
+    max-width: calc(var(--max-width-for-inputs) - (22px)); /*padding + border*/
+}
+
+.button_container {
+    max-width: var(--max-width-for-inputs);
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+
+.contact_button {
+    width: 30%;
+    padding: 0.5rem;
+    border: 1px solid var(--dark-background);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#contact_submit {
+    background-color: var(--dark-background);
+    color: var(--light-text);
+}
+
+
+/* RIGHT SIDE OF FORM */
+#contact_right_fieldset {
+    align-items: flex-start;
+    flex: 1 1 40%;
+}
+
+#contact_right_fieldset label {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+#contact_right_fieldset legend {
+    font-size: x-large;
+    font-weight: 600;
+    color: var(--dark-text);
+    padding-bottom: 1rem;
+}
+
+/* DECORATION */
+#contact_form_decoration {
+    flex: 1 1 30%;
+}
+
+#contact_form_decoration img {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 767px) {
+    #contact_form_decoration {
+        display: none;
+    }
+}
+
+/* Tablets */
+@media screen and (min-width:768px) and (max-width: 1023px) {
+    #contact_form_decoration {
+        display: none;
+    }
+}
+
+@media print {
+    /* All your print styles go here */
+}

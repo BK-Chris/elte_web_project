@@ -3,13 +3,16 @@
 #color_schemes{
     border: 3px solid var(--dark-background);
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
+    height: 80vh;
 }
 
 #color_scheme_description {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #color_scheme_navigation {
@@ -30,7 +33,7 @@
 #color_schemes_description_wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 2rem;
 }
 
@@ -44,6 +47,7 @@
 }
 
 .color_scheme_item {
+    padding: 0 0.5rem;
     display: flex;
     flex-direction: column;
 }

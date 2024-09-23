@@ -23,7 +23,7 @@ function configureCommonElements() {
             },
             {   // Color Palettes Page
                 name: "Palettes",
-                path: "color_palettes.html",
+                path: "color_palette.html",
                 title: "Color Palettes"
             },
             {   // Contact Page

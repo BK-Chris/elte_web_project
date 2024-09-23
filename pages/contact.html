@@ -8,7 +8,9 @@
     <title id="title"></title>
     <link id="icon" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="../styles/main.css">
-    <script src="../scripts/common/config.js" defer></script>
+    <link rel="stylesheet" href="../styles/contact.css">
+    <script src="../scripts/config.js" defer></script>
+    <script src="../scripts/contact.js" defer></script>
 </head>
 
 <body>
@@ -26,31 +28,60 @@
         <section class="introduction">
             <h1>Contact us!</h1>
             <article>
-                If you have any questions about this project, or if you'd like to discuss other aspects of web development, feel free to contact me!
+                If you have any questions about this project, or if you'd like to discuss other aspects of web
+                development, feel free to contact me!
             </article>
         </section>
-<!--
-        |Name: [input text]                      | Reason For Contact: [radio buttons]|
-        |E-mail: [input mail]                    | - General Inquiry                  |
-        |[text area]                             | - Color Consultation               |
-        |[checkbox] Subscribe to our newsletter  | - Feedback or Suggestion           |
-        |                                        | - Technical Issue                  |
-        |[Button] Submit, [Button] Reset         | - Other                            |
--->
-        <form action="#" method="post">
-            <fieldset>
-                <legend>Legenda</legend>
-                <label for="whatever"></label>
-                <input id="whatever"><input>
-                ..
-            </fieldset>
 
-            <fieldset>
-                <legend>a csoda szarvasról, vagy rege?</legend>
-                ..
-            </fieldset>
-        </form>
-        <img src="../media/imgs/contact/silhouette_female_profile.png" alt="A black and white silhouette of a woman facing left. Her hair is styled in an updo.">
+        <section id="contact_container">
+            <form id="contact_form" action="" method="post">
+                <fieldset id="contact_left_fieldset">
+                    <div class="label_input_wrapper">
+                        <label for="contact_name" >Name:</label>
+                        <input type="text" id="contact_name" placeholder="Your Name">
+                    </div>
+                    <div class="label_input_wrapper">
+                        <label for="contact_email">E-mail:</label>
+                        <input type="email" name="contact_email" id="contact_email" placeholder="mail@example.com"
+                            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+                    </div>
+                    <textarea name="contact_message" id="contact_message" placeholder="Example Text"></textarea>
+
+                    <label for="contact_subscribe">
+                        <input type="checkbox" name="contact_subscribe" id="contact_subscribe" checked>
+                        Subscribe to our newsletter
+                    </label>
+
+                    <div class="button_container">
+                        <input id="contact_submit" class="contact_button hover" type="submit" value="Submit">
+                        <button type="button" class="contact_button hover_dark" onclick="resetForm()">Reset</button>
+                    </div>
+                </fieldset>
+
+                <fieldset id="contact_right_fieldset">
+                    <legend>Reason for contact</legend>
+                    <label for="general_inquiry">
+                        <input type="radio" name="contact_reason" id="general_inquiry" value="General Inquiry">
+                        General Inquiry</label>
+                    <label for="color_consultation"><input type="radio" name="contact_reason" id="color_consultation"
+                            value="Color Consultation">
+                        Color Consultation</label>
+                    <label for="feedback_or_suggestion"><input type="radio" name="contact_reason"
+                            id="feedback_or_suggestion" value="Feedback or Suggestion">
+                        Feedback or Suggestion</label>
+                    <label for="technical_issue"><input type="radio" name="contact_reason" id="technical_issue"
+                            value="Technical Issue">
+                        Technical Issue</label>
+                    <label for="other"><input type="radio" name="contact_reason" id="other" value="Other">
+                        Other</label>
+                </fieldset>
+            </form>
+
+            <aside id="contact_form_decoration">
+                <img src="../media/imgs/contact/silhouette_female_profile.png"
+                    alt="A black and white silhouette of a woman facing left. Her hair is styled in an updo.">
+            </aside>
+        </section>
     </main>
 
     <footer id="footer">
