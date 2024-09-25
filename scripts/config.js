@@ -1,4 +1,10 @@
 "use strict"
+var isMobileDevice = isMobileWidth();
+
+window.addEventListener("resize", () => {
+    isMobileDevice = isMobileWidth();
+});
+
 configureCommonElements();
 
 function configureCommonElements() {
@@ -118,4 +124,35 @@ function configureCommonElements() {
 // Helper functions
 function safeStringComparison(str1, str2) {
     return str1.toLowerCase() === str2.toLowerCase();
+}
+
+function isMobileWidth() {
+    return !window.matchMedia("(min-width: 767px)").matches;
+}
+
+// Other
+function createModal(modalContent, selfRemove = false) {
+    /* Requires modal.css to work! */
+    const modal = document.createElement("div");
+    const close = document.createElement("span");
+    close.innerHTML = '&times;';
+
+    modalContent.classList.add("modal_content");
+    modal.classList.add("modal");
+    close.classList.add("close");
+
+    modalContent.insertBefore(close, modalContent.firstChild);
+
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+
+    if (selfRemove) {
+        close.addEventListener("click", () => {
+            modal.remove();
+        }, "once")
+    } else {
+        close.addEventListener("click", () => {
+            modal.style.display = "none";
+        })
+    }
 }
