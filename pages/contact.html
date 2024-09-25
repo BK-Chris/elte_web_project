@@ -9,6 +9,7 @@
     <link id="icon" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/contact.css">
+    <link rel="stylesheet" href="../styles/modal.css">
     <script src="../scripts/config.js" defer></script>
     <script src="../scripts/contact.js" defer></script>
 </head>
@@ -36,43 +37,57 @@
         <section id="contact_container">
             <form id="contact_form" action="" method="post">
                 <fieldset id="contact_left_fieldset">
+
                     <div class="label_input_wrapper">
-                        <label for="contact_name" >Name:</label>
-                        <input type="text" id="contact_name" placeholder="Your Name">
+                        <label for="contact_name">Name:</label>
+                        <input tabindex="1" type="text" name="contact_name" id="contact_name" placeholder="Your Name"
+                            required>
                     </div>
+
                     <div class="label_input_wrapper">
                         <label for="contact_email">E-mail:</label>
-                        <input type="email" name="contact_email" id="contact_email" placeholder="mail@example.com"
-                            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+                        <input tabindex="2" type="email" name="contact_email" id="contact_email"
+                            placeholder="mail@example.com" required>
                     </div>
-                    <textarea name="contact_message" id="contact_message" placeholder="Example Text"></textarea>
+
+                    <div class=" label_input_wrapper">
+                        <textarea tabindex="3" name="contact_message" id="contact_message" placeholder="Example Text"
+                            required></textarea>
+                    </div>
 
                     <label for="contact_subscribe">
-                        <input type="checkbox" name="contact_subscribe" id="contact_subscribe" checked>
+                        <input tabindex="4" type="checkbox" name="contact_subscribe" id="contact_subscribe">
                         Subscribe to our newsletter
                     </label>
 
                     <div class="button_container">
-                        <input id="contact_submit" class="contact_button hover" type="submit" value="Submit">
-                        <button type="button" class="contact_button hover_dark" onclick="resetForm()">Reset</button>
+                        <input tabindex="6" id="contact_submit" class="contact_button hover" type="submit"
+                            value="Submit">
+                        <button tabindex="7" id="contact_reset" class="contact_button hover_dark" type="button"
+                            onclick="resetForm()">Reset</button>
                     </div>
                 </fieldset>
 
                 <fieldset id="contact_right_fieldset">
                     <legend>Reason for contact</legend>
                     <label for="general_inquiry">
-                        <input type="radio" name="contact_reason" id="general_inquiry" value="General Inquiry">
+                        <input tabindex="5" type="radio" name="contact_reason" id="general_inquiry"
+                            value="General Inquiry">
                         General Inquiry</label>
-                    <label for="color_consultation"><input type="radio" name="contact_reason" id="color_consultation"
+                    <label for="color_consultation">
+                        <input type="radio" name="contact_reason" id="color_consultation"
                             value="Color Consultation">
                         Color Consultation</label>
-                    <label for="feedback_or_suggestion"><input type="radio" name="contact_reason"
-                            id="feedback_or_suggestion" value="Feedback or Suggestion">
+                    <label for="feedback_or_suggestion">
+                        <input type="radio" name="contact_reason" id="feedback_or_suggestion"
+                            value="Feedback or Suggestion">
                         Feedback or Suggestion</label>
-                    <label for="technical_issue"><input type="radio" name="contact_reason" id="technical_issue"
+                    <label for="technical_issue">
+                        <input type="radio" name="contact_reason" id="technical_issue"
                             value="Technical Issue">
                         Technical Issue</label>
-                    <label for="other"><input type="radio" name="contact_reason" id="other" value="Other">
+                    <label for="other">
+                        <input type="radio" name="contact_reason" id="other" value="Other">
                         Other</label>
                 </fieldset>
             </form>

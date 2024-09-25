@@ -13,6 +13,9 @@
     display: flex;
     justify-content: space-around;
     gap: 2rem;
+    border: 1px solid var(--dark-background);
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.801);
 }
 
 #contact_right_fieldset,
@@ -36,6 +39,7 @@
     max-width: var(--max-width-for-inputs);
 }
 
+
 .label_input_wrapper label {
     white-space: nowrap;
     width: 20%;
@@ -49,15 +53,20 @@
     width: 80%;
     line-height: 2rem;
     border: 1px solid var(--dark-background);
+    background-color: white;
 }
 
 #contact_message {
+    width: 100%;
     padding: 10px 10px 10px 10px;
     border: 1px solid var(--dark-background);
     min-height: 7rem;
     height: 7rem;
     resize: vertical;
-    max-width: calc(var(--max-width-for-inputs) - (22px)); /*padding + border*/
+    background-color: white;
+
+    /* padding + border*/
+    max-width: calc(var(--max-width-for-inputs) - (22px));
 }
 
 .button_container {
@@ -80,6 +89,10 @@
     color: var(--light-text);
 }
 
+#contact_reset{
+    background-color: var(--light-background);
+    color: var(--dark-text);
+}
 
 /* RIGHT SIDE OF FORM */
 #contact_right_fieldset {
@@ -88,6 +101,7 @@
 }
 
 #contact_right_fieldset label {
+    width: 100%;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
 }
@@ -99,10 +113,12 @@
     padding-bottom: 1rem;
 }
 
+
 /* DECORATION */
 #contact_form_decoration {
     flex: 1 1 30%;
 }
+
 
 #contact_form_decoration img {
     width: 100%;

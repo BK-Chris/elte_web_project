@@ -1,9 +1,9 @@
 :root {
-    --light-text: white;
-    --dark-text: #2a0933;
-    --dark-background: #2b1a33;
-    --light-background: #f0dff85e;
-    --color-active: #74547c;
+    --light-text: #ffffff;
+    --dark-text: #981b1e;
+    --dark-background: #981b1e;
+    --light-background: #ffffff;
+    --color-active: #e31c3d;
 }
 
 * {
@@ -18,9 +18,10 @@ body {
     padding: 0 2rem 10rem 2rem;
     background: rgb(255, 255, 255);
     background: linear-gradient(90deg,
-            rgba(179, 0, 255, 0.301) 0%,
-            rgba(255, 255, 255, 0.089) 20%,
-            rgb(255, 255, 255) 100%);
+            rgba(224, 135, 106, 0.2) 0%,
+            rgb(249, 204, 172, 0.5) 33%,
+            rgb(244, 166, 136, 0.2) 66%,
+            rgb(224, 135, 106, 0.2) 100%);
 }
 
 main {
@@ -31,19 +32,28 @@ main>* {
     padding: 0 1rem 1rem 1rem;
 }
 
+h1,
+h2,
+h3 {
+    color: var(--dark-background);
+}
+
 h1 {
     font-family: 'Lucida Handwriting';
-    color: var(--dark-background);
-    font-size: 1.8rem;
+    font-size: 2rem;
     padding: 2rem;
 }
-/*
+
 h2 {
-    color: var(--dark-background);
+    font-size: 1.8rem;
+    padding: 1.5rem;
+}
+
+h3 {
     font-size: 1.5rem;
     padding: 1rem;
 }
-*/
+
 article {
     text-indent: 1rem;
     text-align: justify;
@@ -55,12 +65,12 @@ strong {
     font-size: larger;
 }
 
-.hide{
+.hide {
     display: none !important;
 }
 
-.display_flex{
-    display:flex;
+.display_flex {
+    display: flex;
 }
 
 
@@ -74,9 +84,8 @@ strong {
 }
 
 .hover_dark:hover {
-    color: var(--light-text);
-    background-color: var(--dark-background);
-    cursor: pointer;
+    color: var(--light-text) !important;
+    background-color: var(--dark-background) !important;
 }
 
 .introduction {
