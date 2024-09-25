@@ -1,7 +1,7 @@
 # Web I. beadandó
 
 **Készítette**
-*Bunghardt Krisztián (B40T6A)*
+*B. Krisztián*
 *Programtervező Informatikus hallgató*
 *2024.09.19*
 
