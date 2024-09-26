@@ -1,46 +1,44 @@
-"use strict"
-var isMobileDevice = isMobileWidth();
+/* The main purpose of this file is to bundle global variables and functions into one file. */
 
-window.addEventListener("resize", () => {
-    isMobileDevice = isMobileWidth();
-});
+/* Globals */
+var isMobileDevice = () => !window.matchMedia("(min-width: 767px)").matches;
 
-configureCommonElements();
+var getCurrentPage = () => (window.location.pathname).substring((window.location.pathname).lastIndexOf('/') + 1);
 
-function configureCommonElements() {
-    const iconPath = "./media/icons/logo/icons8-color-16.png";
-    const logoPath = "./media/icons/logo/icons8-color-96.png";
-    const pages =
-        [
-            {   // Index Page
-                name: "Home",
-                path: "index.html",
-                title: "Color Theory"
-            },
-            {   // History Page
-                name: "History",
-                path: "history.html",
-                title: "History Of colors"
-            },
-            {   // Color Schemes Page
-                name: "Schemes",
-                path: "color_scheme.html",
-                title: "Color Schemes"
-            },
-            {   // Color Palettes Page
-                name: "Palettes",
-                path: "color_palette.html",
-                title: "Color Palettes"
-            },
-            {   // Contact Page
-                name: "Contact",
-                path: "contact.html",
-                title: "Contact us!"
-            }
-        ];
+var isHomePage = () => {
+    let currentPage = getCurrentPage();
+    if (currentPage.length === 0)
+        return true; // In case of running it on a server
+    else
+        return safeStringComparison(currentPage, "index.html");
+}
 
-    // TO BE IMPLEMENTED
-    const socialLinks = [
+var getPages = () =>
+    [
+        {
+            name: "Home",
+            path: "index.html",
+        },
+        {
+            name: "History",
+            path: "history.html",
+        },
+        {
+            name: "Schemes",
+            path: "color_scheme.html",
+        },
+        {
+            name: "Palettes",
+            path: "color_palette.html",
+        },
+        {
+            name: "Contact",
+            path: "contact.html",
+        }
+    ];
+
+var getSocials = () =>
+    [
         {
             alt: "Facebook",
             src: "media/icons/social_media/icons8-facebook-48.png",
@@ -61,76 +59,25 @@ function configureCommonElements() {
             src: "media/icons/social_media/icons8-youtube-48.png",
             href: "https://www.youtube.com/"
         }
-    ]
+    ];
 
-    const pagesContainer = document.getElementById("pages");
-    const socialContainer = document.getElementById("social_links");
-
-    const titleElement = document.getElementById("title");
+function setLogo() {
     const iconElement = document.getElementById("icon");
-    const logoElement = document.getElementById("logo");
+    const logoContainer = document.getElementById("logo");
+    const logoImg = document.createElement("img");
 
-    // Current page
-    let currentPathName = window.location.pathname;
-    currentPathName = currentPathName.substring(currentPathName.lastIndexOf('/') + 1);
-
-    const isHomePage = safeStringComparison(currentPathName, "index.html")
-
-    if (isHomePage) {
-        iconElement.href = iconPath;
-        logoElement.src = logoPath;
+    if (isHomePage()) {
+        iconElement.href = "./media/icons/logo/icons8-color-16.png";
+        logoImg.src = "./media/icons/logo/icons8-color-96.png";
     } else {
-        iconElement.href = '.' + iconPath;
-        logoElement.src = '.' + logoPath;
+        iconElement.href = "../media/icons/logo/icons8-color-16.png";
+        logoImg.src = "../media/icons/logo/icons8-color-96.png";
     }
-
-    // Adding pages
-    pages.forEach(page => {
-        const anchor = document.createElement("a");
-
-        anchor.text = page.name;
-        // Setting active page
-        if (safeStringComparison(page.path.substring(page.path.lastIndexOf('/') + 1), currentPathName)) {
-            titleElement.text = page.title;
-            anchor.classList.add("active");
-            anchor.href = '#';
-        } else {
-            anchor.classList.add("hover");
-            if (page.name !== "Home") {
-                anchor.href = (isHomePage) ? "./pages/" + page.path : page.path
-            } else {
-                anchor.href = "../" + page.path;
-            }
-        }
-        pagesContainer.appendChild(anchor);
-    });
-
-    // Adding Social links
-    socialLinks.forEach(link => {
-        const anchor = document.createElement("a");
-        const img = document.createElement("img");
-
-        anchor.href = link.href;
-        img.alt = link.alt;
-        (isHomePage) ?
-            img.src = link.src :
-            img.src = "../" + link.src;
-
-        anchor.appendChild(img);
-        socialContainer.appendChild(anchor);
-    });
+    logoContainer.appendChild(logoImg);
 }
 
-// Helper functions
-function safeStringComparison(str1, str2) {
-    return str1.toLowerCase() === str2.toLowerCase();
-}
+/* Global and helper functions */
 
-function isMobileWidth() {
-    return !window.matchMedia("(min-width: 767px)").matches;
-}
-
-// Other
 function createModal(modalContent, selfRemove = false) {
     /* Requires modal.css to work! */
     const modal = document.createElement("div");
@@ -156,3 +103,13 @@ function createModal(modalContent, selfRemove = false) {
         })
     }
 }
+
+function safeStringComparison(str1, str2) {
+    return str1.toLowerCase() === str2.toLowerCase();
+}
+
+/********************************************/
+/* Code here!
+/********************************************/
+
+setLogo();
