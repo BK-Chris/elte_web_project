@@ -1,4 +1,9 @@
-/* Requires isHomePage(), getPages(), getSocials() from config.js */
+/*
+Requires:
+- isHomePage(),  // from config.js
+- getPages(),    // from config.js
+- getSocials()   // from config.js
+*/
 
 populateMenu();
 populateSocials();
@@ -13,7 +18,7 @@ window.addEventListener("resize", () => { // To prevent from menu items disappea
     }
 });
 
-/*************************************************/
+/* Functions */
 
 function populateMenu() {
     const _isHomePage = isHomePage();

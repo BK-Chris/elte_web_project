@@ -1,6 +1,16 @@
-/* Note: 'hover_dark', 'active', 'hide', 'display_flex' are defined in main.css */
+/* Note: 'hover_dark', 'active' are defined in main.css */
 
-#color_schemes{
+.hide {
+    /* Used to toggle different breadcrumbs */
+    display: none !important;
+}
+
+.display_flex {
+    /* Used to toggle different breadcrumbs */
+    display: flex;
+}
+
+#color_schemes {
     border: 3px solid var(--dark-background);
     padding-top: 2rem;
     padding-bottom: 3rem;

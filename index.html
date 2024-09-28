@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title id="title">Color Theory</title>
-    <link id="icon" rel="icon" type="image/x-icon">
+    <link id="icon" rel="icon" type="image/x-icon" href="./media/icons/logo/icons8-color-16.png">
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/navigation.css">
@@ -18,6 +18,7 @@
     <header id="navigation">
         <nav id="menu">
             <a id="logo" href="">
+                <img src="./media/icons/logo/icons8-color-96.png" alt="The site's logo.">
             </a>
         </nav>
         <aside id="socials">
@@ -25,60 +26,64 @@
     </header>
 
     <main>
-        <section id="index_introduction">
-            <section class="index_introduction_left">
+        <div id="homepage_introduction" class="introduction">
+            <article>
                 <h1>What is Color Theory?</h1>
-                <article><strong>Color theory</strong> is the study of how colors work together and how they affect our
-                    emotions
-                    and perceptions.<br>It's
-                    like a toolbox for artists, designers, and creators to help them choose the right colors for their
-                    projects.
-                    <br><br>
-                    Color theory enables you to pick colors that go well together and convey the right mood or message
-                    in
-                    your
-                    work.
-                </article>
+                <strong>Color theory</strong> is the study of how colors work together and how they affect our
+                emotions
+                and perceptions.<br>It's
+                like a toolbox for artists, designers, and creators to help them choose the right colors for their
+                projects.
+                <br><br>
+                Color theory enables you to pick colors that go well together and convey the right mood or message
+                in
+                your
+                work.
                 <a id="index_more_about" class="hover" href="./pages/history.html">More about color theory...</a>
-            </section>
-            <section class="index_introduction_right">
+            </article>
+
+            <aside id="video_container">
                 <video controls>
                     <source src="./media/vids/there_is_no_color.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <a class="hover_dark"
+                <a id="index_full_video" class="hover_dark"
                     href="https://www.interaction-design.org/tv/course_videos/v2/visual-design-2-2-what-is-color-720p.mp4">
                     Click here to see full video...
                 </a>
-            </section>
-        </section>
+            </aside>
+        </div>
 
-        <section id="thumbnail_container">
+        <div id="thumbnail_container">
             <a class="thumbnail hover" href="./pages/color_scheme.html">
-                <img src="./media/imgs/index/color_schemes_thumbnail.jpg"
+                <img class="thumbnail_img" src="./media/imgs/index/color_schemes_thumbnail.jpg"
                     alt="Color swatch book with a variety of colors arranged in a circular pattern.">
-                <p>Choosing the right color scheme is key to creating visually appealing and user-friendly interfaces.
+                <p class="thumbnail_text">Choosing the right color scheme is key to creating visually appealing and
+                    user-friendly interfaces.
                 </p>
-                <p><strong>Read more about it here.</strong></p>
+                <p class="thumbnail_text"><strong>Read more about it here.</strong></p>
             </a>
             <a class="thumbnail hover" href="./pages/color_palettes.html">
-                <img src="./media/imgs/index/color_palettes_thumbnail.jpg"
+                <img class="thumbnail_img" src="./media/imgs/index/color_palettes_thumbnail.jpg"
                     alt="Abstract image of blurred, overlapping circles in various colors, primarily orange and red.">
-                <p>Find stunning color palettes curated for different design styles.</p>
-                <p><strong>Click here to get inspired!</strong>
-                </p>
+                <p class="thumbnail_text">Find stunning color palettes curated for different design styles.</p>
+                <p class="thumbnail_text"><strong>Click here to get inspired!</strong></p>
             </a>
             <a class="thumbnail hover" href="./pages/contact.html">
-                <img src="./media/imgs/index/contact_thumbnail.jpg"
+                <img class="thumbnail_img" src="./media/imgs/index/contact_thumbnail.jpg"
                     alt="A silhouette of a girl typing an laptop while holding a cup of tea. Sitting in a serious blue colored environment.">
-                <p>Have a question or need assistance? Contact our friendly team.</p>
-                <p><strong>Get in Touch!</strong></p>
+                <p class="thumbnail_text">Have a question or need assistance? Contact our friendly team.</p>
+                <p class="thumbnail_text"><strong>Get in Touch!</strong></p>
             </a>
-        </section>
+        </div>
     </main>
 
     <footer id="footer">
-
+        <p>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Érvényes CSS!">
+            </a>
+        </p>
     </footer>
 </body>
 

@@ -1,17 +1,14 @@
-#index_introduction {
+#homepage_introduction {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: space-around;
     gap: 2rem;
     margin-bottom: 3rem;
 }
 
-.index_introduction_left {
-    padding: 0 5rem 2rem 5rem;
-}
-
 #index_more_about,
-.index_introduction_right a{
+#index_full_video {
     border: 1px solid var(--dark-background);
     display: block;
     text-align: center;
@@ -23,25 +20,24 @@
     width: fit-content;
 }
 
-#index_more_about{
+#index_more_about {
     color: var(--light-text);
     background-color: var(--dark-background);
 }
 
-.index_introduction_right a {
+#video_container a {
     color: var(--dark-text);
     background-color: var(--light-background);
     margin-left: auto;
     margin-right: auto;
 }
 
-.index_introduction_right video {
+#video_container video {
     width: 100%;
     height: auto;
 }
 
-/************/
-
+/* Thumbnail styles */
 #thumbnail_container {
     display: flex;
     justify-content: space-around;
@@ -51,7 +47,7 @@
 }
 
 .thumbnail {
-    max-width: 300px;
+    max-width: 500px;
     text-decoration: none;
     border: 5px solid var(--dark-background);
     background-color: var(--dark-background);
@@ -64,29 +60,39 @@
     padding: 1rem;
 }
 
-.thumbnail img {
+.thumbnail_img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: 80% 100%;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
-.thumbnail p {
+.thumbnail_text {
     color: var(--light-text);
     width: auto;
     text-align: center;
     line-height: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     font-size: large;
 }
 
-.thumbnail:hover img {
+.thumbnail:hover .thumbnail_img {
     opacity: 1;
+    transition: opacity 0.5s ease-out;
 }
 
+/* Different views */
 /* Mobiles */
 @media screen and (max-width: 767px) {
+    #homepage_introduction {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
     .index_introduction_left {
         transition: padding 0.5s ease-in-out;
         padding: 0;
@@ -100,9 +106,13 @@
         margin: 1rem auto 1rem auto;
     }
 
-    .thumbnail{
+    .thumbnail {
         width: 100%;
         transition: width 0.5s ease-in-out;
+    }
+
+    .thumbnail_img {
+        opacity: 1;
     }
 }
 
@@ -112,12 +122,21 @@
         transition: padding 0.5s ease-in-out;
         padding: 0;
     }
-    .thumbnail{
+
+    .thumbnail {
         width: 40%;
         transition: width 0.5s ease-in-out;
+    }
+
+    .thumbnail_img {
+        opacity: 1;
     }
 }
 
 @media print {
-    /* All your print styles go here */
+    #thumbnail_container{
+        flex-wrap: nowrap;
+        gap: 0rem;
+        padding: 0;
+    }
 }

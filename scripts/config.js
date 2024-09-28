@@ -1,5 +1,8 @@
 /* The main purpose of this file is to bundle global variables and functions into one file. */
 
+/********************************************/
+/* Code here!                               */
+
 /* Globals */
 var isMobileDevice = () => !window.matchMedia("(min-width: 767px)").matches;
 
@@ -61,23 +64,7 @@ var getSocials = () =>
         }
     ];
 
-function setLogo() {
-    const iconElement = document.getElementById("icon");
-    const logoContainer = document.getElementById("logo");
-    const logoImg = document.createElement("img");
-
-    if (isHomePage()) {
-        iconElement.href = "./media/icons/logo/icons8-color-16.png";
-        logoImg.src = "./media/icons/logo/icons8-color-96.png";
-    } else {
-        iconElement.href = "../media/icons/logo/icons8-color-16.png";
-        logoImg.src = "../media/icons/logo/icons8-color-96.png";
-    }
-    logoContainer.appendChild(logoImg);
-}
-
 /* Global and helper functions */
-
 function createModal(modalContent, selfRemove = false) {
     /* Requires modal.css to work! */
     const modal = document.createElement("div");
@@ -107,9 +94,3 @@ function createModal(modalContent, selfRemove = false) {
 function safeStringComparison(str1, str2) {
     return str1.toLowerCase() === str2.toLowerCase();
 }
-
-/********************************************/
-/* Code here!
-/********************************************/
-
-setLogo();

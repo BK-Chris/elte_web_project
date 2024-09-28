@@ -1,4 +1,6 @@
+/* Describes the most common elements and the colors used through out the whole website */
 :root {
+    --default-text: black;
     --light-text: #ffffff;
     --dark-text: #981b1e;
     --dark-background: #981b1e;
@@ -8,6 +10,7 @@
 
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--default-text)
 }
 
 body {
@@ -21,63 +24,39 @@ body {
             rgb(224, 135, 106, 0.2) 100%);
 }
 
-main {}
-
-h1,
-h2,
-h3 {
-    color: var(--dark-background);
-}
-
 h1 {
+    display: block;
+    color: var(--dark-background);
     font-family: 'Lucida Handwriting';
     font-size: 2rem;
-    padding: 2rem;
-}
-
-h2 {
-    font-size: 1.8rem;
-    padding: 1.5rem;
-}
-
-h3 {
-    font-size: 1.5rem;
-    padding: 1rem;
+    margin: 1rem;
+    text-indent: 0 !important;
 }
 
 article {
-    text-indent: 1rem;
-    text-align: justify;
     line-height: 1.6rem;
 }
 
 strong {
-    color: var(--dark-text);
-    font-size: larger;
+    font-size: large;
 }
 
-.hide {
-    display: none !important;
+.introduction {
+    padding: 1rem 1rem 2rem 1rem;
+    border-bottom: 5px solid var(--dark-background);
+    margin-bottom: 2rem;
 }
 
-.display_flex {
-    display: flex;
-}
-
-.hover:hover {
+.hover:hover,
+.hover:hover * {
     color: var(--dark-text) !important;
     background-color: var(--light-background) !important;
 }
 
-.hover_dark:hover {
+.hover_dark:hover,
+.hober_dark:hover {
     color: var(--light-text) !important;
     background-color: var(--dark-background) !important;
-}
-
-.introduction {
-    margin-bottom: 3rem;
-    border-bottom: 5px solid var(--dark-background);
-    padding: 0 1rem 1rem 1rem;
 }
 
 .active {
@@ -85,42 +64,19 @@ strong {
     background-color: var(--color-active) !important;
 }
 
-#social_links>a {
-    display: block;
-}
-
-/* Mobiles */
-
+/* Mobile view */
 @media screen and (max-width: 767px) {
     body {
+        margin: 0rem;
         padding: 0rem;
+        transition: margin 0.5s ease-out;
         transition: padding 0.5s ease-out;
     }
 
-    #logo {
-        display: none;
+    h1 {
+        text-align: center;
+        margin: 1rem 0;
     }
-
-    /*
-    #navigation{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    #pages,
-    #social_links {
-        width: 100%;
-        margin-left: 1rem;
-        margin-right: 1rem;
-        background-color: var(--dark-background);
-    }
-
-    #social_links *:not(:first-child),
-    #pages *:not(:first-child) {
-        display: none;
-    }
-*/
 }
 
 /* Tablets */
@@ -133,5 +89,19 @@ strong {
 }
 
 @media print {
-    /* All your print styles go here */
+
+    header,
+    footer {
+        display: none !important;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--light-background);
+    }
+
+    body *:not(h1) {
+        color: black !important;
+    }
 }

@@ -1,3 +1,18 @@
+/* 
+Requires:
+ - HTML structure below,
+ - navigation.js
+
+<header id="navigation">
+  <nav id="menu">
+    <a id="logo" href="">
+    </a>
+  </nav>
+  <aside id="socials">
+  </aside>
+</header>
+*/
+
 #navigation {
   display: flex;
   flex-wrap: nowrap;
@@ -46,6 +61,7 @@
   filter: invert(100%);
 }
 
+/* Mobile view */
 @media screen and (max-width: 767px) {
   #navigation {
     flex-direction: column;
@@ -86,6 +102,7 @@
   }
 }
 
+/* Tablet view */
 @media screen and (min-width:768px) and (max-width: 1023px) {
   #navigation {
     flex-direction: column;
