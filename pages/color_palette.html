@@ -8,8 +8,10 @@
     <title id="title">Color Palettes</title>
     <link id="icon" rel="icon" type="image/x-icon" href="../media/icons/logo/icons8-color-16.png">
 
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/navigation.css">
+    <link rel="stylesheet" href="../styles/common/main.css">
+    <link rel="stylesheet" href="../styles/common/navigation.css">
+    <link rel="stylesheet" href="../styles/common/footer.css">
+
     <link rel="stylesheet" href="../styles/color_palette.css">
     
     <script src="../scripts/config.js" defer></script>
@@ -823,8 +825,56 @@
         </section>
     </main>
 
-    <footer>
-
+    <footer id="footer">
+        <section id="footer_disclaimer">
+            <h3>Disclaimer</h3>
+            <p>
+                This site has been created for Web Programming I. subject at <a href="https://www.inf.elte.hu/"><abbr
+                        title="Eötvös Loránd University Faculty Of Informatics">ELTE-IK</abbr></a>
+                <br>
+                You can check out the whole project at <a
+                    href="https://github.com/BK-Chris/elte_web_project">github</a>.
+            </p>
+        </section>
+        <section id="footer_goals">
+            <h3>Goal of the project</h3>
+            <ul>
+                <li>Learn about web development fundamentals (wireframes, HTML, CSS, JavaScript).</li>
+                <li>Learn about <a href="https://www.w3.org/WAI/standards-guidelines/wcag"><abbr
+                            title="Web Content Accessibility Guidelines">WCAG</abbr>&nbsp;2+</a> accessibility
+                    guidelines.</li>
+            </ul>
+        </section>
+        <section id="footer_resource">
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="https://wireframepro.mockflow.com/">Mockflow</a></li>
+                <li><a href="https://www.interaction-design.org/literature/topics/color-theory/">Interaction Design
+                        Foundation</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Color_theory">Wikipedia</a></li>
+                <li><a href="https://icons8.com/">Icons8</a></li>
+                <li><a href="https://www.w3schools.com/colors/colors_palettes.asp">W3Schools</a></li>
+                <li>AI tools:
+                    <ul id="ai_list">
+                        <li><a href="https://copilot.microsoft.com">Copilot's designer</a></li>
+                        <li><a href="https://gemini.google.com">Gemini</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <div id="footer_copyright">
+            <p>
+                &copy;Created By <a href="https://github.com/BK-Chris">B. Krisztián</a> (Software Engineering Student)
+                in
+                2024.
+            </p>
+            <p>
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss"
+                        alt="Érvényes CSS!">
+                </a>
+            </p>
+        </div>
     </footer>
 </body>
 

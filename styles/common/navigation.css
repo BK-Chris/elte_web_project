@@ -1,0 +1,124 @@
+/* 
+Requires:
+ - HTML structure below,
+ - navigation.js
+
+<header id="navigation">
+  <nav id="menu">
+    <a id="logo" href="*.*">
+      <img src="*.*">
+    </a>
+
+    <!-- menu_item(s) goes here from navigation.js -->
+
+    <!-- a toggle 50x50px hamburger icon comes here from from navigation.js
+              (./media/icons/icons8-hamburger-50.png)
+    ORDER IS IMPORTANT!
+    -->
+  </nav>
+  <aside id="socials">
+  </aside>
+</header>
+*/
+
+#navigation {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 5px solid var(--dark-background);
+}
+
+#menu,
+#socials {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#menu {
+  gap: 1rem;
+}
+
+#socials a img {
+  display: block;
+  margin: auto;
+}
+
+.menu_item {
+  display: flex;
+  align-items: center;
+  background-color: var(--dark-background);
+  color: var(--light-text);
+  text-decoration: none;
+  font-size: large;
+  padding: 5px 1rem;
+  height: 50px;
+  border: 2px solid var(--dark-background);
+  border-radius: 5px;
+}
+
+#toggle_menu {
+  display: none;
+}
+
+#toggle_menu img {
+  display: block;
+  margin: auto;
+  filter: invert(100%);
+}
+
+/* Mobile view */
+@media screen and (max-width: 767px) {
+  #navigation {
+    flex-direction: column;
+    align-items: flex-start;
+    border-style: none !important;
+  }
+
+  #menu {
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .menu_item {
+    width: 100%;
+    border-style: none;
+    text-indent: 1rem;
+  }
+
+  #menu a:not(:last-child):not(.active) {
+    display: none;
+  }
+
+  #socials {
+    display: none;
+  }
+
+  #toggle_menu {
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+
+  #logo {
+    display: none !important;
+  }
+}
+
+/* Tablet view */
+@media screen and (min-width:768px) and (max-width: 1023px) {
+  #navigation {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #logo {
+    display: none;
+  }
+}

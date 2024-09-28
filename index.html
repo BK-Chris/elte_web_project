@@ -7,11 +7,16 @@
 
     <title id="title">Color Theory</title>
     <link id="icon" rel="icon" type="image/x-icon" href="./media/icons/logo/icons8-color-16.png">
-    <link rel="stylesheet" href="./styles/main.css">
+
+    <link rel="stylesheet" href="./styles/common/main.css">
+    <link rel="stylesheet" href="./styles/common/navigation.css">
+    <link rel="stylesheet" href="./styles/common/footer.css">
+    
     <link rel="stylesheet" href="./styles/index.css">
-    <link rel="stylesheet" href="./styles/navigation.css">
+
     <script src="./scripts/config.js" defer></script>
     <script src="./scripts/navigation.js" defer></script>
+    <script src="./scripts/transcript.js" defer></script>
 </head>
 
 <body>
@@ -39,15 +44,44 @@
                 in
                 your
                 work.
-                <a id="index_more_about" class="hover" href="./pages/history.html">More about color theory...</a>
+                <a id="index_more_about" class="light_text hover" href="./pages/history.html">More about color
+                    theory...</a>
             </article>
 
             <aside id="video_container">
-                <video controls>
+                <video id="video" controls poster="./media/vids/there_is_no_color_img.png">
                     <source src="./media/vids/there_is_no_color.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <a id="index_full_video" class="hover_dark"
+                <p id="transcript_toggle" class="light_text hover">Expand transcript</p>
+                <ol id="transcript_list" style="display: none;">
+                    <li><a href="#video&t=0">00:00&nbsp;-&nbsp;00:05</a>&nbsp;There is no such thing as color without
+                        the
+                        <em>eyes</em> and the <em>brain.</em>
+                    </li>
+                    <li><a href="#video&t=5">00:05&nbsp;-&nbsp;00:12</a>&nbsp;Different brains <em>process</em> visual
+                        information
+                        differently.</li>
+                    <li><a href="#video&t=12">00:12&nbsp;-&nbsp;00:22</a>&nbsp;And I realized that this idea that color
+                        does not
+                        exists outside of our perception can be <em>very difficult</em> to swallow.</li>
+                    <li><a href="#video&t=22">00:22&nbsp;-&nbsp;00:30</a>&nbsp;And in fact our brains go to <em>great
+                            lengths</em>
+                        to give
+                        us all of the colors that we see.</li>
+                    <li><a href="#video&t=30">00:30&nbsp;-&nbsp;00:43</a>&nbsp;The source of our color vision is in our
+                        retina. A
+                        credit card thin sheet of neurons in the back of our eye ball, and its actually a part of
+                        our
+                        brain.</li>
+                    <li><a href="#video&t=43">00:43&nbsp;-&nbsp;00:47</a>&nbsp;Our retina is the only part of our brain
+                        that
+                        exists outside of our skulls.</li>
+                    <li><a href="#video&t=47">00:47&nbsp;-&nbsp;00:54</a>&nbsp;And our retina is what we typically
+                        assosicate with
+                        sight in general...*fades out*</li>
+                </ol>
+                <a id="full_video_link" class="dark_text hover_dark"
                     href="https://www.interaction-design.org/tv/course_videos/v2/visual-design-2-2-what-is-color-720p.mp4">
                     Click here to see full video...
                 </a>
@@ -79,11 +113,55 @@
     </main>
 
     <footer id="footer">
-        <p>
-            <a href="http://jigsaw.w3.org/css-validator/check/referer">
-                <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Érvényes CSS!">
-            </a>
-        </p>
+        <section id="footer_disclaimer">
+            <h3>Disclaimer</h3>
+            <p>
+                This site has been created for Web Programming I. subject at <a href="https://www.inf.elte.hu/"><abbr
+                        title="Eötvös Loránd University Faculty Of Informatics">ELTE-IK</abbr></a>
+                <br>
+                You can check out the whole project at <a
+                    href="https://github.com/BK-Chris/elte_web_project">github</a>.
+            </p>
+        </section>
+        <section id="footer_goals">
+            <h3>Goal of the project</h3>
+            <ul>
+                <li>Learn about web development fundamentals (wireframes, HTML, CSS, JavaScript).</li>
+                <li>Learn about <a href="https://www.w3.org/WAI/standards-guidelines/wcag"><abbr
+                            title="Web Content Accessibility Guidelines">WCAG</abbr>&nbsp;2+</a> accessibility
+                    guidelines.</li>
+            </ul>
+        </section>
+        <section id="footer_resource">
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="https://wireframepro.mockflow.com/">Mockflow</a></li>
+                <li><a href="https://www.interaction-design.org/literature/topics/color-theory/">Interaction Design
+                        Foundation</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Color_theory">Wikipedia</a></li>
+                <li><a href="https://icons8.com/">Icons8</a></li>
+                <li><a href="https://www.w3schools.com/colors/colors_palettes.asp">W3Schools</a></li>
+                <li>AI tools:
+                    <ul id="ai_list">
+                        <li><a href="https://copilot.microsoft.com">Copilot's designer</a></li>
+                        <li><a href="https://gemini.google.com">Gemini</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <div id="footer_copyright">
+            <p>
+                &copy;Created By <a href="https://github.com/BK-Chris">B. Krisztián</a> (Software Engineering Student)
+                in
+                2024.
+            </p>
+            <p>
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss"
+                        alt="Érvényes CSS!">
+                </a>
+            </p>
+        </div>
     </footer>
 </body>
 
