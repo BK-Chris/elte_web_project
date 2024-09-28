@@ -1,44 +1,110 @@
+#history_main {
+    margin: 0 3rem;
+    padding: 0 3rem;
+}
+
+#history_main article {
+    font-size: large;
+    line-height: 2rem;
+    text-align: justify;
+    font-family: sans-serif;
+}
+
 .history_article {
     display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     align-items: center;
     gap: 2rem;
 }
 
 .history_article:not(:last-child) {
-    border-bottom: 3px solid var(--dark-background);
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-}
-
-.history_article article {
-    flex: 2 1 0;
+    border-bottom: 2px solid var(--dark-background);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .history_article:nth-child(even) {
     flex-direction: row-reverse;
 }
 
-.history_img_anchor {
-    flex: 1 1 0;
-    display: block;
-    border: 3px solid var(--dark-background);
-    box-shadow: inset 1px 1px 2px 2px var(--dark-background);
-    background-image: url("../media/imgs/history/image_background.jpg");
-    padding: 0.5rem;
+.history_article>article {
+    flex: 65%;
 }
 
 .history_img {
-    width: 100%;
-    object-fit: contain;
+    margin: 0;
+    flex: 35%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--dark-background);
+    height: fit-content;
+    background-image: url("../media/imgs/history/white_bg_for_figures.jpg");
 }
 
-@media screen and (max-width: 1023px) {
-    .history_article,
-    .history_article:nth-child(even) {
-        flex-direction: column;
+.history_img img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    object-position: 50% 50%;
+    border-bottom: 5px solid var(--dark-background);
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}
+
+.history_img figcaption {
+    padding: 1rem 0.2rem;
+    text-align: justify;
+    background-color: rgba(255, 255, 255, 0.6);
+    font-family: sans-serif;
+}
+
+/* Mobile view */
+@media screen and (max-width: 767px) {
+    #history_main {
+        margin: 0;
+        padding: 0;
+        transition: all 0.5s ease;
+    }
+
+    .history_article {
+        display: block;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+}
+
+/* Tablets */
+@media screen and (min-width:768px) and (max-width: 1023px) {
+    #history_main {
+        margin: 0 1.5rem;
+        padding: 0 1.5rem;
+        transition: all 0.5s ease;
     }
 }
 
 @media print {
-    /* All your print styles go here */
+    #history_main {
+        margin: 0;
+        padding: 0;
+    }
+
+    .history_article {
+        align-items: flex-start;
+        border: none !important;
+        page-break-after: always;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        gap: 20px;
+    }
+
+    #history_introduction {
+        page-break-after: always;
+        border: none !important;
+    }
+
+    .history_img {
+        margin-top: 5rem;
+    }
 }

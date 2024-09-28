@@ -16,19 +16,19 @@
 The planned content can be viewed [here](/wireframe_and_content_plan/tartalomterv.md)
 
 > - **Home Page**
-<img src="/wireframe_and_content_plan/drotvazterv_index.png" alt="Home page wireframe" width="640">
+<img src="./.wireframe_and_content_plan/drotvazterv_index.png" alt="Home page wireframe" width="640">
 
 > - **History Page**
-<img src="/wireframe_and_content_plan/drotvazterv_history.png" alt="History page wireframe" width="640">
+<img src="./.wireframe_and_content_plan/drotvazterv_history.png" alt="History page wireframe" width="640">
 
 > - **Color Scheme Page**
-<img src="/wireframe_and_content_plan/drotvazterv_color_scheme.png" alt="Color Scheme page wireframe" width="640">
+<img src="./.wireframe_and_content_plan/drotvazterv_color_scheme.png" alt="Color Scheme page wireframe" width="640">
 
 > - **Color Palettes Page**
-<img src="/wireframe_and_content_plan/drotvazterv_color_palettes.png" alt="Color Palettes page wireframe" width="640">
+<img src="./.wireframe_and_content_plan/drotvazterv_color_palettes.png" alt="Color Palettes page wireframe" width="640">
 
 > - **Contact Page**
-<img src="/wireframe_and_content_plan/drotvazterv_contact.png" alt="Home page wireframe" width="640">
+<img src="./.wireframe_and_content_plan/drotvazterv_contact.png" alt="Home page wireframe" width="640">
 
 ---
 

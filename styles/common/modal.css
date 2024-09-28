@@ -11,24 +11,29 @@
 }
 
 .modal_content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
+    background-color: #fefefece;
+    margin: 1rem auto;
+    padding: 0.5rem;
     border: 1px solid #888;
     width: 90%;
+    position: relative;
 }
 
 /* The Close Button */
 .close {
-    color: #ff0000;
-    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #000000;
     font-size: 2rem;
     font-weight: bold;
+    padding: 2rem;
+    text-align: center;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: rgb(255, 0, 0);
     text-decoration: none;
     cursor: pointer;
 }

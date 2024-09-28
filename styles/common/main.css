@@ -1,6 +1,5 @@
 /* Describes the most common elements and the colors used through out the whole website */
 :root {
-    --default-text: black;
     --light-text: #ffffff;
     --dark-text: #981b1e;
     --dark-background: #981b1e;
@@ -10,8 +9,8 @@
 
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--default-text)
 }
+
 
 body {
     margin: 0.2rem;
@@ -26,14 +25,15 @@ body {
 
 h1 {
     display: block;
-    color: var(--dark-background);
     font-family: 'Lucida Handwriting';
     font-size: 2rem;
     margin: 1rem;
     text-indent: 0 !important;
 }
 
-h3{
+h1,
+h2,
+h3 {
     color: var(--dark-background);
 }
 
