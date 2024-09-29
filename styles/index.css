@@ -189,4 +189,10 @@
     #video_container {
         display: none;
     }
+
+    #index_more_about,
+    strong,
+    .thumbnail_text {
+        color: black !important;
+    }
 }

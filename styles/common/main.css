@@ -59,12 +59,12 @@ em {
     margin-bottom: 2rem;
 }
 
-.light_text{
+.light_text {
     color: var(--light-text) !important;
     background-color: var(--dark-background) !important;
 }
 
-.dark_text{
+.dark_text {
     color: var(--dark-text) !important;
     background-color: var(--light-background) !important;
 }
@@ -113,6 +113,7 @@ em {
 }
 
 @media print {
+
     header,
     footer {
         display: none !important;
@@ -122,9 +123,5 @@ em {
         margin: 0;
         padding: 0;
         background-color: var(--light-background);
-    }
-
-    body *:not(h1) {
-        color: black !important;
     }
 }

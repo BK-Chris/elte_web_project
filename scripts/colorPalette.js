@@ -5,6 +5,14 @@ adjustTextColorByLuminance(targetClassName, "var(--light-text)", "var(--dark-tex
 
 colorPalettesContainer.addEventListener("click", (event) => copyColor(event));
 
+window.addEventListener('beforeprint', () => {
+    const detailsElements = document.querySelectorAll('details');
+    detailsElements.forEach(details => {
+        details.open = true;
+    });
+});
+
+
 async function copyColor(event) {
     if (!event.target.parentElement.classList.contains(targetClassName))
         return;
