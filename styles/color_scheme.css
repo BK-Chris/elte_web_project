@@ -1,5 +1,3 @@
-/* Note: 'hover_dark', 'active' are defined in main.css */
-
 .hide {
     /* Used to toggle different breadcrumbs */
     display: none !important;
@@ -7,17 +5,43 @@
 
 .display_flex {
     /* Used to toggle different breadcrumbs */
-    display: flex;
+    display: flex !important;
 }
 
 #color_schemes {
-    border: 3px solid var(--dark-background);
     padding-top: 2rem;
-    padding-bottom: 3rem;
-    height: 80vh;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+#color_scheme_navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    gap: 0.3rem;
+    padding: 0 0 2rem 0;
+    margin: 0;
+}
+
+#color_scheme_navigation li {
+    list-style: none;
+    line-height: 1.5rem;
+    padding: 0.3rem;
+}
+
+#color_schemes_canvas_wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
 }
 
 #color_scheme_description {
+    flex: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,67 +49,117 @@
     overflow-x: hidden;
 }
 
-#color_scheme_navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-    gap: 0.3rem;
-    padding-bottom: 2rem;
-}
-
-#color_scheme_navigation li {
-    list-style-type: none;
-    line-height: 1.5rem;
-    padding: 0.3rem;
-}
-
-#color_schemes_description_wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
+#canvas_container {
+    padding: 1rem 0.2rem;
+    flex: 50%;
 }
 
 #color_scheme_description {
-    flex: 1 1 0;
+    flex: 50%
 }
 
 #canvas {
-    flex: 1 1 0;
+    margin: auto;
+    width: 100%;
     border: 3px solid var(--dark-background);
 }
 
-.color_scheme_item {
-    padding: 0 0.5rem;
+.color_scheme_img {
     display: flex;
     flex-direction: column;
+    border: 2px solid var(--dark-background);
 }
 
-.color_scheme_item img {
+.color_scheme_img img {
     width: 100%;
-    border: 1px solid var(--dark-background);
+    aspect-ratio: 16 / 9;
+    border-bottom: 5px solid var(--dark-background);
+    cursor: pointer;
 }
 
-.color_scheme_item>article {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    text-align: center;
+.color_scheme_img figcaption {
+    padding: 1rem 0.2rem;
+    text-align: justify;
+    background-color: rgba(255, 255, 255, 0.6);
+    font-family: sans-serif;
 }
 
+/*
 #color_scheme_warm_and_cool {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-    padding-top: 2rem;
 }
 
-#color_scheme_warm_and_cool>div,
-#color_scheme_warm_and_cool>article {
-    flex: 1 1 0;
+#warm_and_cool_img{
+    flex: 30%;
 }
 
-#color_scheme_warm_and_cool img {
-    width: 100%;
+#warm_and_cool_text {
+    flex: 70%;
+}
+*/
+
+/* Mobile view */
+@media screen and (max-width: 767px) {
+    #color_schemes_canvas_wrapper {
+        flex-direction: column;
+    }
+
+    #color_scheme_navigation li:nth-of-type(even) {
+        display: none !important;
+    }
+
+    #color_scheme_description,
+    #canvas_container {
+        flex: 100%;
+    }
+
+    .color_scheme_img {
+        margin: 0.2rem;
+    }
+}
+
+/* Tablets */
+@media screen and (min-width:768px) and (max-width: 1023px) {
+    #color_schemes_canvas_wrapper {
+        flex-direction: column;
+    }
+
+    #color_scheme_navigation li:nth-of-type(even) {
+        display: none !important;
+    }
+
+    #color_scheme_description,
+    #canvas_container {
+        flex: 100%;
+    }
+
+    .color_scheme_img {
+        margin: 0.5rem;
+    }
+}
+
+@media print {
+    #color_scheme_navigation {
+        display: none;
+    }
+
+    #canvas_container {
+        display: none;
+    }
+
+    #monochromatic,
+    #complementary,
+    #triadic {
+        page-break-after: always;
+    }
+
+    .color_scheme_img figcaption {
+        height: auto;
+        padding: 0.2rem 0.2rem;
+    }
+
+    .hide {
+        display: block !important;
+    }
 }

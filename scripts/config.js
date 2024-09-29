@@ -81,14 +81,57 @@ function createModal(modalContent, selfRemove = false) {
     document.body.appendChild(modal);
 
     if (selfRemove) {
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                modal.remove();
+            }
+        }), "once";
         close.addEventListener("click", () => {
             modal.remove();
         }, "once")
     } else {
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                modal.style.display = "none";
+            }
+        });
         close.addEventListener("click", () => {
             modal.style.display = "none";
         })
     }
+}
+
+function createModalFromFigure(img) {
+    /* Expected HTML structure:
+    <figure>
+        <img src="" alt""> <!-- expecting this img -->
+        <figcaption>
+        </figcaption>
+    </figure>
+    */
+    const modalContent = document.createElement("div");
+    modalContent.style.display = "flex";
+    modalContent.style.flexDirection = "column";
+    modalContent.style.alignItems = "center";
+
+    const imgElement = document.createElement("img");
+    imgElement.src = img.src;
+    imgElement.alt = img.alt;
+    imgElement.style.maxWidth = "100%";
+    imgElement.style.maxHeight = "100%";
+    modalContent.appendChild(imgElement);
+
+    const originalFigcaption = img.parentElement.querySelector("figcaption");
+    if (originalFigcaption !== null) {
+        const figcaption = document.createElement("figcaption");
+        figcaption.innerText = originalFigcaption.innerText;
+        figcaption.style.fontSize = "larger";
+        figcaption.style.width = "90%";
+        figcaption.style.textAlign = "center";
+        modalContent.appendChild(figcaption);
+    }
+
+    createModal(modalContent, true);
 }
 
 function safeStringComparison(str1, str2) {
