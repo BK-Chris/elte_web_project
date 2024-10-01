@@ -14,7 +14,6 @@ const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i;
 /* Strings */
 const errMsgInvalidName = "Name must be at least 2 characters long!";
 const errMsgInvalidEmail = "Email must be valid!";
-const errMsgInvalidMsg = "Message should be a least 20 characters long!";
 const errMsgNoSelection = "Choose a reason for contact!";
 const msgConfirm = "Are you sure you want to reset form?";
 
@@ -117,11 +116,12 @@ function sendForm() {
 
 function validateInput(event) {
     const input = event.target;
+    const maxLength = event.target.maxLength;
     switch (input.id) {
         case "contact_name":
             (!isValidName()) ?
                 createErrorMessageBox(nameInput.parentElement, errMsgInvalidName, "right") :
-                hideErrorMessageBox(nameInput.parentElement);
+                createErrorMessageBox(nameInput.parentElement, Number(maxLength) - Number(event.target.value.length), "right", false);
             break;
         case "contact_email":
             (!isValidEmail()) ?
@@ -129,9 +129,9 @@ function validateInput(event) {
                 hideErrorMessageBox(emailInput.parentElement);
             break;
         case "contact_message":
-            (!isValidMessage()) ?
-                createErrorMessageBox(textarea.parentElement, errMsgInvalidMsg, "right") :
-                hideErrorMessageBox(textarea.parentElement);
+            createErrorMessageBox(textarea.parentElement,
+                "Characters left: " + (Number(maxLength) - Number(event.target.value.length)),
+                "top", false);
             break;
     }
     if (input.name === "contact_reason") {
@@ -162,7 +162,7 @@ function isValidEmail() {
 }
 
 function isValidMessage() {
-    if (textarea.value.length < 20) {
+    if (textarea.value.length = 0) {
         textarea.style.background = wrongInputColor;
         return false;
     } else {
@@ -189,8 +189,8 @@ function hasSelectedOption() {
 }
 
 
-function createErrorMessageBox(relativeDiv, message, orientation) {
-    if (isMobileDevice()) // Message box is intended for larger screens!
+function createErrorMessageBox(relativeDiv, message, orientation, deviceDetection = true) {
+    if (deviceDetection && isMobileDevice()) // Message box is intended for larger screens!
         return;
     let errorMessageBoxes = Array.from(relativeDiv.getElementsByClassName("error_message_box"));
 

@@ -40,16 +40,28 @@ h3 {
 article,
 ul,
 ol {
+    font-size: large;
     line-height: 1.6rem;
     text-align: left;
     /* text-align: left; is required by the guideline. */
 }
 
+article,
+section,
+p{
+    font-family: sans-serif;
+}
+
 strong {
-    font-size: large;
+    font-size: larger;
 }
 
 em {
+    color: var(--dark-text);
+}
+
+abbr{
+    text-decoration: none;
     color: var(--dark-text);
 }
 

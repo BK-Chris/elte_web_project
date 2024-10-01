@@ -5,7 +5,7 @@
 
 .display_flex {
     /* Used to toggle different breadcrumbs */
-    display: flex !important;
+    display: flex;
 }
 
 #color_schemes {
@@ -42,6 +42,7 @@
 
 #color_scheme_description {
     flex: 50%;
+    width: 99%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,59 +51,43 @@
 }
 
 #canvas_container {
-    padding: 1rem 0.2rem;
     flex: 50%;
-}
-
-#color_scheme_description {
-    flex: 50%
-}
-
-#canvas {
-    margin: auto;
-    width: 100%;
-    border: 3px solid var(--dark-background);
+    width: 99%;
+    border: 1px solid var(--dark-background);
 }
 
 .color_scheme_img {
+    margin: 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    border: 2px solid var(--dark-background);
-}
-
-.color_scheme_img img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-bottom: 5px solid var(--dark-background);
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 2px solid var(--dark-background);
+    border-bottom: 2px solid var(--dark-background);
+    background-color: rgba(255, 255, 255, 1);
     cursor: pointer;
 }
 
+.color_scheme_img img {
+    margin: 0.5rem;
+    max-width: max-content;
+    width: 100%;
+}
+
 .color_scheme_img figcaption {
-    padding: 1rem 0.2rem;
+    width: 90%;
+    border-top: 2px solid var(--dark-background);
+    padding: 1rem;
     text-align: justify;
-    background-color: rgba(255, 255, 255, 0.6);
-    font-family: sans-serif;
 }
-
-/*
-#color_scheme_warm_and_cool {
-    display: flex;
-    align-items: center;
-}
-
-#warm_and_cool_img{
-    flex: 30%;
-}
-
-#warm_and_cool_text {
-    flex: 70%;
-}
-*/
 
 /* Mobile view */
 @media screen and (max-width: 767px) {
     #color_schemes_canvas_wrapper {
+        flex-wrap: wrap;
         flex-direction: column;
+        align-items: center;
     }
 
     #color_scheme_navigation li:nth-of-type(even) {
@@ -122,7 +107,9 @@
 /* Tablets */
 @media screen and (min-width:768px) and (max-width: 1023px) {
     #color_schemes_canvas_wrapper {
+        flex-wrap: wrap;
         flex-direction: column;
+        align-items: center;
     }
 
     #color_scheme_navigation li:nth-of-type(even) {
@@ -133,13 +120,13 @@
     #canvas_container {
         flex: 100%;
     }
-
-    .color_scheme_img {
-        margin: 0.5rem;
-    }
 }
 
 @media print {
+    .color_scheme_img {
+        margin: 1rem;
+    }
+
     #color_scheme_navigation {
         display: none;
     }
@@ -160,6 +147,6 @@
     }
 
     .hide {
-        display: block !important;
+        display: flex !important;
     }
 }

@@ -1,7 +1,5 @@
-// CreateModalFromFigure(imageElement) is defined in config.js
-
 const breadcrumbs = document.getElementById("color_scheme_navigation").children;
-let imgContainers = Array.from(document.getElementsByClassName("color_scheme_img"));
+const descriptionElement = document.getElementById("color_scheme_description");
 
 for (let i = 0; i < breadcrumbs.length; i++) {
     if (breadcrumbs[i].textContent !== '/') {
@@ -9,13 +7,15 @@ for (let i = 0; i < breadcrumbs.length; i++) {
     }
 }
 
-imgContainers.forEach(imgContainer => {
-
-    imgContainer.addEventListener("click", (event) => {
-        if (event.target.tagName.toLowerCase() !== "img")
-            return;
-        createModalFromFigure(event.target);
-    });
+descriptionElement.addEventListener("click", (event) => {
+    const targetImgContainer = event.target.closest(".color_scheme_img");
+    if (targetImgContainer == null)
+        return;
+    
+    const targetImg = Array.from(targetImgContainer.children).find((child) => child.tagName.toLowerCase() === "img");
+    console.log(targetImg.src);
+    const normalImagePath = targetImg.src.replace("_small","");
+    window.location.href = normalImagePath;
 });
 
 /* Functions */

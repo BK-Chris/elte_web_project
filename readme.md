@@ -29,7 +29,3 @@ The planned content can be viewed [here](/wireframe_and_content_plan/tartalomter
 
 > - **Contact Page**
 <img src="./.wireframe_and_content_plan/drotvazterv_contact.png" alt="Home page wireframe" width="640">
-
----
-
-*To be continued..*
