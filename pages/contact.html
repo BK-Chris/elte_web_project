@@ -7,7 +7,7 @@
 
     <title id="title">Contact us!</title>
     <link id="icon" rel="icon" type="image/x-icon" href="../media/icons/logo/icons8-color-16.png">
-    
+
     <link rel="stylesheet" href="../styles/common/main.css">
     <link rel="stylesheet" href="../styles/common/navigation.css">
     <link rel="stylesheet" href="../styles/common/footer.css">
@@ -32,31 +32,36 @@
     </header>
 
     <main>
-        <section class="introduction">
-            <h1>Contact us!</h1>
+        <div class="introduction">
             <article>
+                <h1>Contact us!</h1>
                 If you have any questions about this project, or if you'd like to discuss other aspects of web
                 development, feel free to contact me!
             </article>
-        </section>
+        </div>
 
-        <section id="contact_container">
-            <form id="contact_form" action="" method="post">
+        <div id="contact_container">
+            <aside id="decoration_left">
+                <img src="../media/imgs/contact/silhouette_female_profile.png"
+                    alt="A black and white silhouette of a woman facing left. Her hair is styled in an updo.">
+            </aside>
+
+            <form id="contact_form" action="#" method="post">
                 <fieldset id="contact_left_fieldset">
 
-                    <div class="label_input_wrapper">
+                    <div class="label_input_wrapper_left">
                         <label for="contact_name">Name:</label>
                         <input tabindex="1" type="text" name="contact_name" id="contact_name" placeholder="Your Name"
                             required>
                     </div>
 
-                    <div class="label_input_wrapper">
+                    <div class="label_input_wrapper_left">
                         <label for="contact_email">E-mail:</label>
                         <input tabindex="2" type="email" name="contact_email" id="contact_email"
                             placeholder="mail@example.com" required>
                     </div>
 
-                    <div class=" label_input_wrapper">
+                    <div class=" label_input_wrapper_left">
                         <textarea tabindex="3" name="contact_message" id="contact_message" placeholder="Example Text"
                             required></textarea>
                     </div>
@@ -76,33 +81,42 @@
 
                 <fieldset id="contact_right_fieldset">
                     <legend>Reason for contact</legend>
-                    <label for="general_inquiry">
+                    <div class="label_input_wrapper_right">
                         <input tabindex="5" type="radio" name="contact_reason" id="general_inquiry"
                             value="General Inquiry">
-                        General Inquiry</label>
-                    <label for="color_consultation">
-                        <input type="radio" name="contact_reason" id="color_consultation"
-                            value="Color Consultation">
-                        Color Consultation</label>
-                    <label for="feedback_or_suggestion">
+                        <label for="general_inquiry">
+                            General Inquiry</label>
+                    </div>
+
+                    <div class="label_input_wrapper_right">
+                        <input type="radio" name="contact_reason" id="color_consultation" value="Color Consultation">
+                        <label for="color_consultation">Color Consultation</label>
+                    </div>
+
+                    <div class="label_input_wrapper_right">
                         <input type="radio" name="contact_reason" id="feedback_or_suggestion"
                             value="Feedback or Suggestion">
-                        Feedback or Suggestion</label>
-                    <label for="technical_issue">
-                        <input type="radio" name="contact_reason" id="technical_issue"
-                            value="Technical Issue">
-                        Technical Issue</label>
-                    <label for="other">
+                        <label for="feedback_or_suggestion">Feedback or Suggestion</label>
+                    </div>
+
+                    <div class="label_input_wrapper_right">
+                        <input type="radio" name="contact_reason" id="technical_issue" value="Technical Issue">
+                        <label for="technical_issue">Technical Issue</label>
+                    </div>
+
+                    <div class="label_input_wrapper_right">
                         <input type="radio" name="contact_reason" id="other" value="Other">
-                        Other</label>
+                        <label for="other">Other</label>
+                    </div>
                 </fieldset>
+
             </form>
 
-            <aside id="contact_form_decoration">
+            <aside id="decoration_right">
                 <img src="../media/imgs/contact/silhouette_female_profile.png"
                     alt="A black and white silhouette of a woman facing left. Her hair is styled in an updo.">
             </aside>
-        </section>
+        </div>
     </main>
 
     <footer id="footer">

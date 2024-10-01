@@ -1,18 +1,17 @@
-:root {
-    --max-width-for-inputs: 500px;
-}
-
 #contact_container {
     display: flex;
-    align-items: flex-start;
-    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    width: 70%;
+    margin: auto auto;
 }
 
 #contact_form {
-    flex: 1 1 70%;
+    min-width: 600px;
     display: flex;
-    justify-content: space-around;
-    gap: 2rem;
+    justify-content: center;
+    gap: 10%;
     border: 1px solid var(--dark-background);
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.801);
@@ -23,24 +22,19 @@
     border: none;
     display: flex;
     flex-direction: column;
-}
-
-/* LEFT SIDE OF FORM */
-#contact_left_fieldset {
-    flex: 1 1 60%;
     gap: 1rem;
 }
 
-.label_input_wrapper {
+/* LEFT SIDE OF FORM */
+.label_input_wrapper_left {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
-    max-width: var(--max-width-for-inputs);
 }
 
 
-.label_input_wrapper label {
+.label_input_wrapper_left label {
     white-space: nowrap;
     width: 20%;
     flex-shrink: 0;
@@ -48,7 +42,7 @@
     font-weight: 600;
 }
 
-.label_input_wrapper input {
+.label_input_wrapper_left input {
     padding: 10px;
     width: 80%;
     line-height: 2rem;
@@ -64,20 +58,17 @@
     height: 7rem;
     resize: vertical;
     background-color: white;
-
-    /* padding + border*/
-    max-width: calc(var(--max-width-for-inputs) - (22px));
 }
 
 .button_container {
-    max-width: var(--max-width-for-inputs);
     display: flex;
     justify-content: space-evenly;
     margin-top: 1rem;
 }
 
 .contact_button {
-    width: 30%;
+    width: 40%;
+    font-size: large;
     padding: 0.5rem;
     border: 1px solid var(--dark-background);
     border-radius: 10px;
@@ -89,19 +80,24 @@
     color: var(--light-text);
 }
 
-#contact_reset{
+#contact_reset {
     background-color: var(--light-background);
     color: var(--dark-text);
+}
+
+.label_input_wrapper_right {
+    padding: 0.5rem;
+    border: 1px solid var(--dark-background);
+    background-color: #ffffc5;
+    width: 100%;
 }
 
 /* RIGHT SIDE OF FORM */
 #contact_right_fieldset {
     align-items: flex-start;
-    flex: 1 1 40%;
 }
 
 #contact_right_fieldset label {
-    width: 100%;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
 }
@@ -115,29 +111,95 @@
 
 
 /* DECORATION */
-#contact_form_decoration {
-    flex: 1 1 30%;
+
+#decoration_left img {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1)
 }
 
-
-#contact_form_decoration img {
-    width: 100%;
-    height: auto;
+#decoration_left img,
+#decoration_right img {
+    width: 300px !important;
 }
 
 @media screen and (max-width: 767px) {
-    #contact_form_decoration {
+    #contact_container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #contact_form {
+        flex-wrap: wrap-reverse;
+        align-items: center;
+        min-width: 0;
+    }
+
+    #contact_right_fieldset legend {
+        text-align: center;
+    }
+
+    #decoration_left,
+    #decoration_right {
         display: none;
     }
+
+    .label_input_wrapper_left {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .label_input_wrapper_left label,
+    .label_input_wrapper_left input {
+        width: 100%;
+    }
+
 }
 
 /* Tablets */
-@media screen and (min-width:768px) and (max-width: 1023px) {
-    #contact_form_decoration {
+@media screen and (min-width:768px) and (max-width: 1200px) {
+
+    #decoration_left,
+    #decoration_right {
         display: none;
     }
 }
 
 @media print {
-    /* All your print styles go here */
+    #contact_container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #contact_form {
+        flex-wrap: wrap-reverse;
+        align-items: center;
+        min-width: 0;
+        border-style: none;
+    }
+
+    .label_input_wrapper_right {
+        border-style: none;
+        padding: 0;
+    }
+
+    #contact_right_fieldset legend {
+        text-align: center;
+    }
+
+    #decoration_left,
+    #decoration_right {
+        display: none;
+    }
+
+    .label_input_wrapper_left {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .label_input_wrapper_left label,
+    .label_input_wrapper_left input {
+        width: 100%;
+    }
 }

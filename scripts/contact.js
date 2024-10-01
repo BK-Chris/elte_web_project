@@ -1,12 +1,13 @@
 /******************************************************************************************/
 /* Notes:
-/*  - isMobileDevice is a boolean type and defined in config.js
+/*  - isMobileDevice() returns a boolean and defined in config.js
 /*  - createModal(node, boolean) is defined in config.js
 /*  - Sanitization could be improved by using external libraries such as DOMPurify and server side sanitization as well.
 /*
 /* VARIABLES */
 let defaultInputColor;
 const wrongInputColor = "#f9dede"; // light red
+const warnInputColor = "#ffffc5"; // light yellow
 const validInputColor = "#e7f4e4"; // light green
 const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i;
 
@@ -51,6 +52,10 @@ function sendForm() {
         !isValidMessage() ||
         selectedOption === null) {
         console.error("One or more data wasn't valid thus preventing form from submitting.")
+        window.scrollTo({
+            top: form.offsetTop,
+            behavior: "smooth"
+        });
         return;
     }
 
@@ -68,42 +73,46 @@ function sendForm() {
     const isSubsribed = formData.get("contact_subscribe");
 
     const modalContent = document.createElement("div");
-    const header = document.createElement("header");
-    const h1 = document.createElement("h1");
-    h1.textContent = "Your message";
-    h1.textAlign = "center";
+    const mHeader = document.createElement("header");
+    const mTitle = document.createElement("h2");
+    mTitle.textContent = "Your message!";
+    mTitle.textAlign = "center";
 
-    const h2 = document.createElement("h2");
-    h2.textContent = "Hello " + name + '!';
+    const mGreet = document.createElement("h4");
+    mGreet.innerHTML = "Hello&nbsp;" + name + '!';
     const subscribedMsg = document.createElement("p");
-    subscribedMsg.textContent = (isSubsribed) ?
+    subscribedMsg.textContent = (isSubsribed === "true") ?
         "You have decided to subscribe to our newsletter!"
         : "You didn't subscribe to us!";
-    const h3Email = document.createElement("h3");
-    h3Email.innerHTML = "<strong>Your email: </strong>" + email;
-    const h3Subject = document.createElement("h3");
-    h3Subject.innerHTML = "<strong>Your subject: </strong>" + subject;
+    subscribedMsg.style.color = "var(--light-text)";
+    subscribedMsg.style.background = "var(--dark-background)";
+    const mEmail = document.createElement("h4");
+    mEmail.innerHTML = "<strong>From:</strong>&nbsp;" + email;
+    const mSubject = document.createElement("h4");
+    mSubject.innerHTML = "<strong>Subject:</strong>&nbsp;" + subject;
 
     const main = document.createElement("main");
     main.style.borderBottom = "3px solid var(--dark-background)";
     main.style.borderTop = "3px solid var(--dark-background)";
-    main.textContent = "This is your message to us:";
-    const article = document.createElement("article");
-    article.textContent = message;
+    main.innerHTML = "<p><strong>Message:</strong></p>";
+    const mMessage = document.createElement("p");
+    mMessage.textContent = message;
 
     const footer = document.createElement("footer");
     footer.innerHTML = "This message will not be sent to anywhere. This modal has been created for demonstrational purposes only.";
-    
-    header.appendChild(h1);
-    header.appendChild(h2);
-    header.appendChild(h3Email);
-    header.appendChild(h3Subject);
-    main.appendChild(article);
-    modalContent.appendChild(header)
+
+    mHeader.appendChild(mTitle);
+    mHeader.appendChild(mGreet);
+    mHeader.appendChild(mEmail);
+    mHeader.appendChild(mSubject);
+    main.appendChild(subscribedMsg);
+    main.appendChild(mMessage);
+    modalContent.appendChild(mHeader)
     modalContent.appendChild(main);
     modalContent.appendChild(footer);
 
     createModal(modalContent, true);
+    resetForm(true);
 }
 
 function validateInput(event) {
@@ -124,6 +133,11 @@ function validateInput(event) {
                 createErrorMessageBox(textarea.parentElement, errMsgInvalidMsg, "right") :
                 hideErrorMessageBox(textarea.parentElement);
             break;
+    }
+    if (input.name === "contact_reason") {
+        if (!hasSelectedOption()) {
+            createErrorMessageBox(reasonForContact[0].parentElement, errMsgNoSelection, "left");
+        }
     }
 }
 
@@ -159,20 +173,25 @@ function isValidMessage() {
 
 function hasSelectedOption() {
     const selectedReason = reasonForContact.find(reason => reason.checked === true);
-    if (!selectedReason) {
-        reasonForContact.forEach(reason => {
+    reasonForContact.forEach(reason => {
+        if (!selectedReason) {
             reason.parentElement.style.background = wrongInputColor;
-        });
-        createErrorMessageBox(reasonForContact[0].parentElement, errMsgNoSelection, "left");
+        } else {
+            reason.parentElement.style.background = "none";
+        }
+    });
+
+    if (!selectedReason)
         return null;
-    }
+
+    selectedReason.parentElement.style.background = validInputColor;
     return selectedReason;
 }
 
-function createErrorMessageBox(relativeDiv, message, orientation) {
-    if (isMobileDevice) // Message box is intended for larger screens!
-        return;
 
+function createErrorMessageBox(relativeDiv, message, orientation) {
+    if (isMobileDevice()) // Message box is intended for larger screens!
+        return;
     let errorMessageBoxes = Array.from(relativeDiv.getElementsByClassName("error_message_box"));
 
     let errorMessageBox = errorMessageBoxes.find(element => element.classList.contains("error_message_box"));
@@ -227,8 +246,8 @@ function hideErrorMessageBox(container) {
     });
 }
 
-function resetForm() {
-    if (!confirm(msgConfirm)) {
+function resetForm(noConfirm = false) {
+    if (!noConfirm && !confirm(msgConfirm)) {
         return;
     }
     textarea.style.height = textarea.style.minHeight;
@@ -236,9 +255,13 @@ function resetForm() {
     emailInput.style.background = defaultInputColor;
     textarea.style.background = defaultInputColor;
     reasonForContact.forEach(reason => {
-        reason.parentElement.style.background = "none";
+        reason.parentElement.style.background = warnInputColor;
     })
     form.reset();
+    window.scrollTo({
+        top: form.offsetTop,
+        behavior: "smooth"
+    });
 }
 
 function sanitizeInput(input) {
