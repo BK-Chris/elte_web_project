@@ -8,50 +8,15 @@
 
 .cp_table {
     flex: 30%;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-
-.cp_table * {
-    text-align: center;
-    border-radius: 0;
-}
-
-.cp_table tr {
-    border: 1px solid var(--dark-background);
-}
-
-.cp_table caption {
-    background-color: var(--dark-text);
-    color: var(--light-text);
-    border-bottom: 1px solid var(--light-background);
-}
-
-.cp_table summary {
-    font-weight: 600;
-    font-size: large;
-    cursor: pointer;
-}
-
-.cp_table th {
-    background-color: var(--dark-background);
-    color: var(--light-text);
 }
 
 .cp_table td {
     width: 50%;
-    line-height: 2rem;
-    text-wrap: nowrap;
-    overflow: hidden;
     cursor: pointer;
 }
 
 .cp_table td:nth-of-type(even) {
     border-left: 1px solid var(--dark-background);
-}
-
-.cp_table td:focus {
-    background-color: white;
 }
 
 

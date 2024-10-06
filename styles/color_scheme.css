@@ -9,9 +9,10 @@
 }
 
 #color_schemes {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #color_scheme_navigation {
@@ -34,31 +35,25 @@
 
 #color_schemes_canvas_wrapper {
     display: flex;
-    flex-wrap: nowrap;
+    gap: 1rem;
+    width: 95%;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 2rem;
 }
 
-#color_scheme_description {
-    flex: 50%;
-    width: 99%;
-    display: flex;
+#cs_col1 {
+    flex: 1;
+    display: block;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-#canvas_container {
-    flex: 50%;
-    width: 99%;
-    border: 1px solid var(--dark-background);
-}
-
-.color_scheme_img {
+#cs_col1>figure {
     margin: 0;
     width: 100%;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -82,9 +77,41 @@
     text-align: justify;
 }
 
+
+#cs_col2 {
+    flex: 1;
+}
+
+#cs_col2>table {
+    margin: 0 auto;
+    width: 90%;
+}
+
+#cs_col12 td {
+    width: 50%;
+    cursor: pointer;
+}
+
+#cs_col3 {
+    flex: 1;
+}
+
+#canvas_container {
+    margin: 0 auto;
+    aspect-ratio: 1/1;
+    width: 100%;
+    max-width: 400px;
+}
+
+#canvas {
+    width: 100%;
+    height: 100%;
+}
+
 /* Mobile view */
 @media screen and (max-width: 767px) {
     #color_schemes_canvas_wrapper {
+        width: 95%;
         flex-wrap: wrap;
         flex-direction: column;
         align-items: center;
@@ -94,8 +121,9 @@
         display: none !important;
     }
 
-    #color_scheme_description,
-    #canvas_container {
+    #cs_col1,
+    #cs_col2,
+    #cs_col3 {
         flex: 100%;
     }
 
@@ -107,6 +135,7 @@
 /* Tablets */
 @media screen and (min-width:768px) and (max-width: 1023px) {
     #color_schemes_canvas_wrapper {
+        width: 95%;
         flex-wrap: wrap;
         flex-direction: column;
         align-items: center;
@@ -116,8 +145,10 @@
         display: none !important;
     }
 
-    #color_scheme_description,
-    #canvas_container {
+    #cs_col1,
+    #cs_col2,
+    #cs_col3 {
+        width: 100%;
         flex: 100%;
     }
 }
@@ -131,7 +162,8 @@
         display: none;
     }
 
-    #canvas_container {
+    #cs_col2,
+    #cs_col3 {
         display: none;
     }
 

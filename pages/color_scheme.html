@@ -18,7 +18,11 @@
 
     <script src="../scripts/config.js" defer></script>
     <script src="../scripts/navigation.js" defer></script>
+
+    <script src="../scripts/color_wheel_app/Rectangle.js" defer></script>
+    <script src="../scripts/color_wheel_app/ColorWheel.js" defer></script>
     <script src="../scripts/colorScheme.js" defer></script>
+
 </head>
 
 <body>
@@ -65,7 +69,7 @@
 
             <div id="color_schemes_canvas_wrapper">
 
-                <div id="color_scheme_description">
+                <div id="cs_col1">
                     <figure id="monochromatic" class="color_scheme_img display_flex">
                         <img src="../media/imgs/color_scheme/monochromatic_small.webp"
                             alt="Monochromatic scheme on a color wheel.">
@@ -145,9 +149,61 @@
                         </figcaption>
                     </figure>
                 </div>
-                <div id="canvas_container">
-                    <canvas id="canvas"></canvas>
+
+
+                <section id="cs_col2">
+                    <h3>Color Wheel Instructions</h3>
+                    <p>
+                    <ul>
+                        <li>
+                            <b>Click</b> and <b>hold</b> any cirle
+                        </li>
+                        <li>
+                            <b>Drag</b> them to another shade <b>or move</b> to another color.
+                        </li>
+                        <li>
+                            To switch mode click on one of the color scheme, above.
+                        </li>
+                        <li>
+                            Below you can see the choosen colors and their codes.
+                        </li>
+                    </ul>
+                    </p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>HEX</th>
+                                <th>RGB</th>
+                            </tr>
+                        </thead>
+                        <tbody id="color_list_container">
+                            <tr class="color_shade" style="background-color: #588c7e;">
+                                <td>#588c7e</td>
+                                <td>rgb(88, 140, 126)</td>
+                            </tr>
+                            <tr class="color_shade" style="background-color: #f2e394;">
+                                <td>#f2e394</td>
+                                <td>rgb(242, 227, 148)</td>
+                            </tr>
+                            <tr class="color_shade" style="background-color: #f2ae72;">
+                                <td>#f2ae72</td>
+                                <td>rgb(242, 174, 114)</td>
+                            </tr>
+                            <tr class="color_shade" style="background-color: #d96459;">
+                                <td>#d96459</td>
+                                <td>rgb(217, 100, 89)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <div id="cs_col3">
+                    <div id="canvas_container">
+                        <canvas id="canvas">
+                        </canvas>
+                    </div>
                 </div>
+
             </div>
         </div>
     </main>
