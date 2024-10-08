@@ -31,7 +31,7 @@
         </aside>
     </header>
 
-    <main>
+    <main id="main_content">
         <div class="introduction">
             <article>
                 <h1>Contact us!</h1>
@@ -51,13 +51,13 @@
                 <fieldset id="contact_left_fieldset">
 
                     <div class="label_input_wrapper_left">
-                        <label for="contact_name">Name:</label>
+                        <label for="contact_name">*Name:</label>
                         <input tabindex="1" type="text" name="contact_name" id="contact_name" placeholder="Your Name" maxlength="30"
                             required>
                     </div>
 
                     <div class="label_input_wrapper_left">
-                        <label for="contact_email">E-mail:</label>
+                        <label for="contact_email">*E-mail:</label>
                         <input tabindex="2" type="email" name="contact_email" id="contact_email"
                             placeholder="mail@example.com" required>
                     </div>
@@ -81,7 +81,7 @@
                 </fieldset>
 
                 <fieldset id="contact_right_fieldset">
-                    <legend>Reason for contact</legend>
+                    <legend>*Reason for contact</legend>
                     <div class="label_input_wrapper_right">
                         <input tabindex="5" type="radio" name="contact_reason" id="general_inquiry"
                             value="General Inquiry">

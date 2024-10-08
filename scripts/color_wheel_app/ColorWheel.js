@@ -215,7 +215,7 @@ class ColorWheel {
 
     _drawColorWheel() {
         this._ctx.save();
-        for (let i = this.numberOfShades; i > 0; i--) {
+        for (let i = this.numberOfShades; i > 1; i--) {
             const gradient = this._ctx.createConicGradient(this.degreeToRadian(30), this.canvasMidX, this.canvasMidY);
             for (let j = 0; j < this._mainColors.length; j++) {
                 gradient.addColorStop((1 / this._mainColors.length) * j,
@@ -226,6 +226,10 @@ class ColorWheel {
             this._ctx.arc(this.canvasMidX, this.canvasMidY, this.minRadius * i, 0, this.degreeToRadian(360));
             this._ctx.fill();
         }
+        this._ctx.fillStyle = "white";
+        this._ctx.beginPath();
+        this._ctx.arc(this.canvasMidX, this.canvasMidY, this.minRadius, 0, this.degreeToRadian(360));
+        this._ctx.fill();
         this._ctx.restore();
     };
 
@@ -315,7 +319,7 @@ class ColorWheel {
             }
         }
         this._colorSchemeMode = mode;
-        this._freeSpaceInward = this.numberOfShades - repetation;
+        this._freeSpaceInward = this.numberOfShades - repetation - 1;
         this._freeSpaceOutward = 0;
 
         this.refresh();

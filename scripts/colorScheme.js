@@ -1,5 +1,5 @@
 /* Canvas */
-const colorWheel = new ColorWheel(document.getElementById("canvas"), 8);
+const colorWheel = new ColorWheel(document.getElementById("canvas"), 9);
 colorWheel._c.addEventListener("colorChanged", fillColorList);
 const colorListContainer = document.getElementById("color_list_container");
 fillColorList();
@@ -21,7 +21,7 @@ descriptionElement.addEventListener("click", (event) => {
 
     const targetImg = Array.from(targetImgContainer.children).find((child) => child.tagName.toLowerCase() === "img");
     const normalImagePath = targetImg.src.replace("_small", "");
-    window.location.href = normalImagePath;
+    window.open(normalImagePath, '_blank');
 });
 
 /* Functions */
@@ -70,6 +70,9 @@ function breadcrumbHandler(event) {
 
     newSection.classList.remove("hide");
     newSection.classList.add("display_flex");
+
+    const textBelowCanvas = document.getElementById("current_mode");
+    textBelowCanvas.innerText = event.target.innerHTML;
 }
 
 function removeActiveClass() {
