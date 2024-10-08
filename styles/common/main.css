@@ -79,9 +79,6 @@ abbr {
     color: var(--dark-text);
 }
 
-a:visited{
-    color: var(--dark-text);
-}
 
 table {
     border-collapse: collapse;
