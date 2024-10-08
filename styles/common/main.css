@@ -4,7 +4,7 @@
     --dark-text: #981b1e;
     --dark-background: #981b1e;
     --light-background: #ffffff;
-    --color-active: #e31c3d;
+    --color-active: #FF8E61;
 }
 
 * {
@@ -74,7 +74,12 @@ em {
 }
 
 abbr {
+    font-weight: 600;
     text-decoration: none;
+    color: var(--dark-text);
+}
+
+a:visited{
     color: var(--dark-text);
 }
 
@@ -132,7 +137,8 @@ table td {
 }
 
 .active {
-    color: var(--light-text) !important;
+    font-weight: 600;
+    color: rgb(0, 0, 0) !important;
     background-color: var(--color-active) !important;
 }
 
