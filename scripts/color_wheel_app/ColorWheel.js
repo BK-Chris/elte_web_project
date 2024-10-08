@@ -1,7 +1,7 @@
 "use strict";
 // Requires Rectangle class
 class ColorWheel {
-    constructor(canvasElement, numberOfShades = 6, colorSchemeMode = "monochromatic") {
+    constructor(canvasElement, isTouchDevice, numberOfShades = 6, colorSchemeMode = "monochromatic") {
         if (!(canvasElement instanceof HTMLCanvasElement))
             throw new Error(`${canvasElement} is not a HTMLCanvasElement!`);
         this.events = {
@@ -27,7 +27,7 @@ class ColorWheel {
             ? this._c.width / 2 / numberOfShades
             : this._c.height / 2 / numberOfShades;
 
-        this._isTouchDevice = this._isTouchDevice();
+        this.isTouchDevice = isTouchDevice;
         this._currentPosition; // Used to keep track of movement of the mouse
         this._currentShade; // will get value onClick or onTouchStart
 
@@ -38,22 +38,16 @@ class ColorWheel {
         this._freeSpaceInward;
         this._freeSpaceOutward;
 
+        this._hitRectScale = 3; // Hitrectangles will be this many times larger (clickable area)
+
         this._init();
     }
 
     _init() {
-        (this._isTouchDevice)
+        (this.isTouchDevice)
             ? this._setTouchEvents()
             : this._setClickEventListeners();
         this.setColorSchemeMode(this._colorSchemeMode);
-    }
-
-    _isTouchDevice() {
-        return (
-            "ontouchstart" in window ||
-            navigator.maxTouchPoints > 0 ||
-            navigator.msMaxTouchPoints > 0
-        );
     }
 
     get mouseDown() { return this._isMouseDown; }
@@ -219,7 +213,7 @@ class ColorWheel {
             const gradient = this._ctx.createConicGradient(this.degreeToRadian(30), this.canvasMidX, this.canvasMidY);
             for (let j = 0; j < this._mainColors.length; j++) {
                 gradient.addColorStop((1 / this._mainColors.length) * j,
-                    this._adjustShade(this.hexToRgbObject(this._mainColors[j]), Math.pow(1.15, (this.numberOfShades - i))));
+                    this._adjustShade(this.hexToRgbObject(this._mainColors[j]), Math.pow(1.25, (this.numberOfShades - i))));
             }
             this._ctx.fillStyle = gradient;
             this._ctx.beginPath();
@@ -254,8 +248,8 @@ class ColorWheel {
     _getCurrentPosition(event) {
         const canvasRect = this._c.getBoundingClientRect();
         return {
-            x: (this._isTouchDevice ? event.touches[0].clientX : event.clientX) - canvasRect.left,
-            y: (this._isTouchDevice ? event.touches[0].clientY : event.clientY) - canvasRect.top
+            x: (this.isTouchDevice ? event.touches[0].clientX : event.clientX) - canvasRect.left,
+            y: (this.isTouchDevice ? event.touches[0].clientY : event.clientY) - canvasRect.top
         };
     }
 
@@ -310,12 +304,15 @@ class ColorWheel {
         }
 
         this.hitRectangles = [];
+
         for (let rep = 0; rep < repetation; rep++) {
             for (let i = 0; i < degreeStops.length; i++) {
                 let distanceFromMidPoint = ((this.minRadius * (this.numberOfShades - 1) + this.minRadius / 2) - this.minRadius * rep);
                 let x = this.canvasMidX + distanceFromMidPoint * Math.cos(this.degreeToRadian(degreeStops[i]));
                 let y = this.canvasMidY + distanceFromMidPoint * Math.sin(this.degreeToRadian(degreeStops[i]));
-                this.hitRectangles.push(new Rectangle(x - this.minRadius / 2, y - this.minRadius / 2, this.minRadius, this.minRadius));
+                let rectangle = new Rectangle((x - this.minRadius / 2),(y - this.minRadius / 2),(this.minRadius),(this.minRadius));
+                rectangle.scaleFromMiddle(this._hitRectScale,this._hitRectScale);
+                this.hitRectangles.push(rectangle);
             }
         }
         this._colorSchemeMode = mode;

@@ -131,24 +131,26 @@ table td {
     background-color: var(--light-background) !important;
 }
 
-.hover:hover,
-.hover:hover * {
-    color: var(--dark-text) !important;
-    background-color: var(--light-background) !important;
-    transition: background-color 0.3s ease;
-}
-
-.hover_dark:hover,
-.hober_dark:hover {
-    color: var(--light-text) !important;
-    background-color: var(--dark-background) !important;
-    transition: background-color 0.3s ease;
-}
-
 .active {
     color: var(--light-text) !important;
     background-color: var(--color-active) !important;
 }
+
+@media (hover: hover) { 
+    .hover:hover,
+    .hover:hover * {
+      color: var(--dark-text) !important;
+      background-color: var(--light-background) !important;
+      transition: background-color 0.3s ease;
+    }
+  
+    .hover_dark:hover,
+    .hover_dark:hover * {
+      color: var(--light-text) !important;
+      background-color: var(--dark-background) !important;
+      transition: background-color 0.3s ease;
+    }
+  }
 
 /* Mobile view */
 @media screen and (max-width: 767px) {

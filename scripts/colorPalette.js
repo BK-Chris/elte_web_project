@@ -3,7 +3,7 @@ const colorPalettesContainer = document.getElementById("color_palettes_container
 
 adjustTextColorByLuminance(targetClassName, "var(--light-text)", "var(--dark-text)");
 
-colorPalettesContainer.addEventListener("click", (event) => copyColor(event));
+colorPalettesContainer.addEventListener("click", (event) => copyColor(event, targetClassName));
 
 window.addEventListener('beforeprint', () => {
     const detailsElements = document.querySelectorAll('details');
@@ -11,24 +11,6 @@ window.addEventListener('beforeprint', () => {
         details.open = true;
     });
 });
-
-
-async function copyColor(event) {
-    if (!event.target.parentElement.classList.contains(targetClassName))
-        return;
-    navigator.clipboard.writeText(event.target.innerText);
-
-    event.target.style.pointerEvents = "none";
-    await flashElement(event.target);
-    event.target.style.pointerEvents = "auto";
-}
-
-async function flashElement(element) {
-    const originalBackgroundColor = element.style.backgroundColor;
-    element.style.backgroundColor = "white";
-    await new Promise(resolve => setTimeout(resolve, 150));
-    element.style.backgroundColor = originalBackgroundColor;
-}
 
 function adjustTextColorByLuminance(className, lightColor = "#FFFFFF", darkColor = "#000000") {
     const colorShades = document.getElementsByClassName(className);

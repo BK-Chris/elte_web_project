@@ -19,6 +19,23 @@ class Rectangle {
         this.centerY = y + height / 2;
     }
 
+    scaleFromMiddle(scaleX, scaleY) {
+        try {
+            scaleX = Number(scaleX);
+            scaleY = Number(scaleY);
+        } catch (err) {
+            console.error(`Failed to conver one or more value to numbers. Expected numbers.` +
+                `\n deltaX=${scaleX}, deltaY=${scaleY}`);
+            return;
+        }
+
+        this.w *= scaleX;
+        this.h *= scaleY;
+
+        this.x = this.centerX - (this.w / 2);
+        this.y = this.centerY - (this.h / 2);
+    }
+
     move(deltaX, deltaY) {
         try {
             deltaX = Number(deltaX);

@@ -70,7 +70,7 @@
 
             <div id="color_schemes_canvas_wrapper">
 
-                <div id="cs_col1">
+                <div id="color_scheme_description">
                     <figure id="monochromatic" class="color_scheme_img display_flex">
                         <img src="../media/imgs/color_scheme/monochromatic_small.webp"
                             alt="Monochromatic scheme on a color wheel.">
@@ -151,10 +151,20 @@
                     </figure>
                 </div>
 
+                <div id="color_wheel_column">
+                    <div id="canvas_container">
+                        <canvas id="canvas">
+                        </canvas>
+                    </div>
+                    <div id="switch_color_scheme">
+                        <div id="previous_mode" class="hover">&lt;</div>
+                        <div id="current_mode">Monochromatic</div>
+                        <div id="next_mode" class="hover">&gt;</div>
+                    </div>
+                </div>
 
-                <section id="cs_col2">
+                <section id="color_wheel_instructions">
                     <h3>Color Wheel Instructions</h3>
-                    <p>
                     <ul>
                         <li>
                             <b>Click</b> and <b>hold</b> any cirle
@@ -169,7 +179,6 @@
                             Below you can see the choosen colors and their codes.
                         </li>
                     </ul>
-                    </p>
                     <table>
                         <thead>
                             <tr>
@@ -178,37 +187,9 @@
                             </tr>
                         </thead>
                         <tbody id="color_list_container">
-                            <tr class="color_shade" style="background-color: #588c7e;">
-                                <td>#588c7e</td>
-                                <td>rgb(88, 140, 126)</td>
-                            </tr>
-                            <tr class="color_shade" style="background-color: #f2e394;">
-                                <td>#f2e394</td>
-                                <td>rgb(242, 227, 148)</td>
-                            </tr>
-                            <tr class="color_shade" style="background-color: #f2ae72;">
-                                <td>#f2ae72</td>
-                                <td>rgb(242, 174, 114)</td>
-                            </tr>
-                            <tr class="color_shade" style="background-color: #d96459;">
-                                <td>#d96459</td>
-                                <td>rgb(217, 100, 89)</td>
-                            </tr>
                         </tbody>
                     </table>
                 </section>
-
-                <div id="cs_col3">
-                    <div id="canvas_container">
-                        <canvas id="canvas">
-                        </canvas>
-                    </div>
-                    <div id="switch_color_scheme">
-                        <div id="previous_mode" class="hover">&lt;</div>
-                        <div id="current_mode">Monochromatic</div>
-                        <div id="next_mode" class="hover">&gt;</div>
-                    </div>
-                </div>
 
             </div>
         </div>

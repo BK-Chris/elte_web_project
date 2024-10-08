@@ -6,6 +6,14 @@
 /* Globals */
 var isMobileDevice = () => !window.matchMedia("(min-width: 767px)").matches;
 
+var isTouchDevice = () => {
+    return (
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0
+    );
+}
+
 var getCurrentPage = () => (window.location.pathname).substring((window.location.pathname).lastIndexOf('/') + 1);
 
 var isHomePage = () => {
@@ -136,4 +144,31 @@ function createModalFromFigure(img) {
 
 function safeStringComparison(str1, str2) {
     return str1.toLowerCase() === str2.toLowerCase();
+}
+
+async function copyColor(event, targetClassName) {
+    if (!event.target.parentElement.classList.contains(targetClassName))
+        return;
+
+    try {
+        await navigator.clipboard.writeText(event.target.innerText);
+    } catch (err) {
+        const textArea = document.createElement("textarea");
+        textArea.value = event.target.innerText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+    }
+
+    event.target.style.pointerEvents = "none";
+    await flashElement(event.target);
+    event.target.style.pointerEvents = "auto";
+}
+
+async function flashElement(element) {
+    const originalBackgroundColor = element.style.backgroundColor;
+    element.style.backgroundColor = "white";
+    await new Promise(resolve => setTimeout(resolve, 150));
+    element.style.backgroundColor = originalBackgroundColor;
 }
