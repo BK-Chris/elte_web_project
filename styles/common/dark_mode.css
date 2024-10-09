@@ -22,6 +22,10 @@
     color: #000000;
 }
 
+.dark_mode .modal_content figcaption {
+    color: #ffffff;
+}
+
 .dark_mode #contact_form {
     background-color: #000000;
 }

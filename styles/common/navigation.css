@@ -94,8 +94,9 @@ Requires:
     display: none;
   }
 
-  #socials {
-    display: none;
+  #socials{
+    width: 100%;
+    justify-content: center;
   }
 
   #toggle_menu {
