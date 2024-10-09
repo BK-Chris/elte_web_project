@@ -10,6 +10,7 @@
 #full_video_link {
     padding: 1rem;
     width: fit-content;
+    color: var(--dark-text);
 }
 
 #index_more_about,
@@ -180,6 +181,10 @@
 }
 
 @media print {
+    :root {
+        color: black !important;
+    }
+
     #thumbnail_container {
         flex-wrap: nowrap;
         gap: 0rem;
@@ -188,11 +193,5 @@
 
     #video_container {
         display: none;
-    }
-
-    #index_more_about,
-    strong,
-    .thumbnail_text {
-        color: black !important;
     }
 }

@@ -1,7 +1,7 @@
 const targetClassName = "color_shade";
 const colorPalettesContainer = document.getElementById("color_palettes_container");
 
-adjustTextColorByLuminance(targetClassName, "var(--light-text)", "var(--dark-text)");
+adjustTextColorByLuminance(targetClassName, "white", "black");
 
 colorPalettesContainer.addEventListener("click", (event) => copyColor(event, targetClassName));
 
